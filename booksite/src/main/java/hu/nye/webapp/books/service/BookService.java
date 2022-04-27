@@ -1,6 +1,6 @@
-package service;
+package hu.nye.webapp.books.service;
 
-import dto.BookDTO;
+import hu.nye.webapp.books.dto.BookDTO;
 
 import java.util.List;
 import java.util.Optional;

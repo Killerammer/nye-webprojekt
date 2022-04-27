@@ -1,4 +1,4 @@
-package exception;
+package hu.nye.webapp.books.exception;
 
 public class BookNotFoundException extends  RuntimeException{
 

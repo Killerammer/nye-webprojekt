@@ -1,4 +1,4 @@
-package response;
+package hu.nye.webapp.books.response;
 
 import lombok.Getter;
 import lombok.Setter;
