@@ -1,12 +1,11 @@
-package controller;
+package hu.nye.webapp.books.controller;
 
-import exception.BookNotFoundException;
-import exception.InvalidBookException;
+import hu.nye.webapp.books.exception.BookNotFoundException;
+import hu.nye.webapp.books.exception.InvalidBookException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import response.ErrorResponse;
+import hu.nye.webapp.books.response.ErrorResponse;
 
 @RestControllerAdvice(assignableTypes = BookController.class)
 public class BookControllerAdvice {

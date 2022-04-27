@@ -1,11 +1,11 @@
-package controller;
+package hu.nye.webapp.books.controller;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import dto.BookDTO;
-import exception.InvalidBookException;
+import hu.nye.webapp.books.dto.BookDTO;
+import hu.nye.webapp.books.exception.InvalidBookException;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
-import service.BookService;
+import hu.nye.webapp.books.service.BookService;
 
 import javax.validation.Valid;
 
@@ -27,12 +27,12 @@ public class BookController {
 
     private final BookService bookService;
 
-    @RequestMapping(path = "/books", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<BookDTO>> findAll() {
         return ResponseEntity.ok(bookService.findAll());
     }
 
-    @RequestMapping(path = "/books", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<BookDTO> create(@RequestBody @Valid BookDTO bookDTO, BindingResult bindingResult){
         checkErrors(bindingResult);
         BookDTO savedBook = bookService.create(bookDTO);

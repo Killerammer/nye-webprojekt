@@ -1,29 +1,25 @@
-package entity;
+package hu.nye.webapp.books.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
-@Entity
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
-public class Book {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class BookDTO {
+
     private Long id;
+    @NotNull
     private String title;
     private String author;
     private Date releaseDate;
     private int price;
+    @NotNull
     private int pageNumber;
-
 }

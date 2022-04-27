@@ -1,12 +1,12 @@
-package service.impl;
-import dto.BookDTO;
-import entity.Book;
-import exception.BookNotFoundException;
+package hu.nye.webapp.books.service.impl;
+import hu.nye.webapp.books.dto.BookDTO;
+import hu.nye.webapp.books.entity.Book;
+import hu.nye.webapp.books.exception.BookNotFoundException;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import repository.BookRepository;
-import service.BookService;
+import hu.nye.webapp.books.repository.BookRepository;
+import hu.nye.webapp.books.service.BookService;
 
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package configuration;
+package hu.nye.webapp.books.configuration;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>hu.nye.webapp</groupId>
-    <artifactId>booksite</artifactId>
+    <artifactId>books</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
