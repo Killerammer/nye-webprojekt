@@ -24,4 +24,6 @@ public class Book {
     private Date releaseDate;
     private int price;
     private int pageNumber;
+    private String publisher;
+    private String ISBN;
 }
