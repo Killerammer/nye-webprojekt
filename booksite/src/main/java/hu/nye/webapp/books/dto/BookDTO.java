@@ -22,4 +22,7 @@ public class BookDTO {
     private int price;
     @NotNull
     private int pageNumber;
+    private String publisher;
+    @NotNull
+    private String ISBN;
 }
