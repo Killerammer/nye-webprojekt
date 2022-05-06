@@ -1,9 +1,9 @@
 package hu.nye.webapp.books.service;
 
-import hu.nye.webapp.books.dto.BookDTO;
-
 import java.util.List;
 import java.util.Optional;
+
+import hu.nye.webapp.books.dto.BookDTO;
 
 public interface BookService {
     List<BookDTO> findAll();

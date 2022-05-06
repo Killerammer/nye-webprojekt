@@ -1,17 +1,17 @@
 package hu.nye.webapp.books.service.impl;
-import hu.nye.webapp.books.dto.BookDTO;
-import hu.nye.webapp.books.entity.Book;
-import hu.nye.webapp.books.exception.BookNotFoundException;
-import lombok.AllArgsConstructor;
-import org.modelmapper.ModelMapper;
-import org.springframework.stereotype.Service;
-import hu.nye.webapp.books.repository.BookRepository;
-import hu.nye.webapp.books.service.BookService;
-
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import hu.nye.webapp.books.dto.BookDTO;
+import hu.nye.webapp.books.entity.Book;
+import hu.nye.webapp.books.exception.BookNotFoundException;
+import hu.nye.webapp.books.repository.BookRepository;
+import hu.nye.webapp.books.service.BookService;
+import lombok.AllArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
@@ -61,7 +61,7 @@ public class BookServiceImpl implements BookService {
     public void delete(Long id) {
         Optional<Book> optionalBook = bookRepository.findById(id);
 
-        if(optionalBook.isPresent()) {
+        if (optionalBook.isPresent()) {
             Book bookToDelete = optionalBook.get();
             bookRepository.delete(bookToDelete);
         } else {
