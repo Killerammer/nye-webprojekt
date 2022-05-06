@@ -2,7 +2,7 @@ package hu.nye.webapp.books.exception;
 
 import java.util.List;
 
-public class InvalidBookException extends RuntimeException{
+public class InvalidBookException extends RuntimeException {
 
     private List<String> messages;
 

@@ -1,9 +1,9 @@
 package hu.nye.webapp.books.dto;
 
-import lombok.*;
-
-import javax.validation.constraints.NotNull;
 import java.util.Date;
+import javax.validation.constraints.NotNull;
+
+import lombok.*;
 
 @NoArgsConstructor
 @Getter
