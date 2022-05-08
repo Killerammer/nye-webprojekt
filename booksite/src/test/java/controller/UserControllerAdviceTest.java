@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.List;
 
 import hu.nye.webapp.books.controller.UserControllerAdvice;
-import hu.nye.webapp.books.exception.UserNotFoundException;
 import hu.nye.webapp.books.exception.InvalidUserException;
+import hu.nye.webapp.books.exception.UserNotFoundException;
 import hu.nye.webapp.books.response.ErrorResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
