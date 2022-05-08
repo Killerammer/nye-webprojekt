@@ -1,6 +1,7 @@
 package hu.nye.webapp.books.dto;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import lombok.*;
 
@@ -12,7 +13,6 @@ import lombok.*;
 @Builder
 public class UserDTO {
 
-    @NotEmpty
     private Long id;
     @NotEmpty
     private String username;
@@ -26,13 +26,13 @@ public class UserDTO {
     private String lastName;
     @NotEmpty
     private String billingName;
-    @NotEmpty
+    @NotNull
     private int postcode;
     @NotEmpty
     private String city;
     @NotEmpty
     private String street;
-    @NotEmpty
+    @NotNull
     private int houseNumber;
     private String floorDoorNumber;
 }
