@@ -10,14 +10,17 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice(assignableTypes = BookController.class)
 public class BookControllerAdvice {
 
-    @ExceptionHandler(value = BookNotFoundException.class)
-    public ResponseEntity<Void> handleBookNotFoundException() {
-        return ResponseEntity.badRequest().build();
+    @ExceptionHandler(value = InvalidBookException.class)
+    public ResponseEntity<ErrorResponse> handleInvalidBookException(InvalidBookException invalidBookException) {
+        ErrorResponse errorResponse = new ErrorResponse(invalidBookException.getErrors());
+        return ResponseEntity.badRequest()
+                .body(errorResponse);
     }
 
-    @ExceptionHandler(value = InvalidBookException.class)
-    public ResponseEntity<ErrorResponse> handleInvalidBookException(InvalidBookException exception) {
-        ErrorResponse errorResponse = new ErrorResponse(exception.getErrors());
-        return ResponseEntity.badRequest().body(errorResponse);
+    @ExceptionHandler(value = BookNotFoundException.class)
+    public ResponseEntity<Void> handleBookNotFoundException(BookNotFoundException bookNotFoundException) {
+        return ResponseEntity.notFound()
+                .build();
     }
+
 }

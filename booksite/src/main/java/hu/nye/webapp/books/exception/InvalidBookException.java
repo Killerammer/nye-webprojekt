@@ -6,7 +6,7 @@ public class InvalidBookException extends RuntimeException {
 
     private List<String> errors;
 
-    public InvalidBookException(String message,  List<String> erros) {
+    public InvalidBookException(String message,  List<String> errors) {
         super(message);
         this.errors = errors;
     }
