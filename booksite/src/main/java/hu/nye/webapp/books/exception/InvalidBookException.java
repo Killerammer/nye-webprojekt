@@ -4,14 +4,14 @@ import java.util.List;
 
 public class InvalidBookException extends RuntimeException {
 
-    private List<String> messages;
+    private List<String> errors;
 
-    public InvalidBookException(String message, List<String> messages) {
+    public InvalidBookException(String message,  List<String> erros) {
         super(message);
-        this.messages = messages;
+        this.errors = errors;
     }
 
-    public List<String> getMessages() {
-        return messages;
+    public List<String> getErrors() {
+        return errors;
     }
 }

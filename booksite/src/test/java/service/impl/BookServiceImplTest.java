@@ -38,7 +38,7 @@ public class BookServiceImplTest {
 
     @BeforeEach
     public void setUp() {
-        underTest = new BookServiceImpl(bookRepository,modelMapper);
+        underTest = new BookServiceImpl(bookRepository, modelMapper);
     }
 
     @Test
@@ -125,10 +125,9 @@ public class BookServiceImplTest {
 
     @Test
     public void testDeleteShouldThrowExceptionIfBookNotFound() {
-        // given
+
         given(bookRepository.findById(BOOK_ID)).willReturn(Optional.empty());
 
-        // when - then
         assertThrows(BookNotFoundException.class, () -> {
             underTest.delete(BOOK_ID);
         });

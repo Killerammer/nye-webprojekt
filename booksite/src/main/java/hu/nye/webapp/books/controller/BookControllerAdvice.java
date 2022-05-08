@@ -17,7 +17,7 @@ public class BookControllerAdvice {
 
     @ExceptionHandler(value = InvalidBookException.class)
     public ResponseEntity<ErrorResponse> handleInvalidBookException(InvalidBookException exception) {
-        ErrorResponse errorResponse = new ErrorResponse(exception.getMessages());
+        ErrorResponse errorResponse = new ErrorResponse(exception.getErrors());
         return ResponseEntity.badRequest().body(errorResponse);
     }
 }

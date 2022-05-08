@@ -3,6 +3,7 @@ package hu.nye.webapp.books.controller;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import javax.validation.Valid;
 
 import hu.nye.webapp.books.dto.BookDTO;
@@ -59,7 +60,8 @@ public class BookController {
     public ResponseEntity<BookDTO> update(@RequestBody @Valid BookDTO bookDTO, BindingResult bindingResult) {
         checkErrors(bindingResult);
         BookDTO updatedBook = bookService.update(bookDTO);
-        return ResponseEntity.ok(updatedBook);
+        return ResponseEntity.ok()
+                .body(updatedBook);
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
@@ -73,14 +75,16 @@ public class BookController {
         LOGGER.info("errors = {}", bindingResult.getAllErrors());
 
         if (bindingResult.hasErrors()) {
-            List<String> messages = new ArrayList<>();
+            List<String> errors = bindingResult.getFieldErrors()
+                    .stream()
+                    .map(this::fieldErrorToMessage)
+                    .collect(Collectors.toList());
 
-            for (FieldError fieldError : bindingResult.getFieldErrors()) {
-                messages.add(fieldError.getField() + " -" + fieldError.getDefaultMessage());
-            }
-
-            throw new InvalidBookException("Invalid book", messages);
+            throw new InvalidBookException("Invalid book", errors);
         }
     }
 
+    private String fieldErrorToMessage(FieldError fieldError) {
+        return fieldError.getField() + " - " + fieldError.getDefaultMessage();
+    }
 }
