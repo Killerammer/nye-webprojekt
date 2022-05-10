@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Könyveink</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<nav class="bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+            <div class="flex space-x-7">
+                <div>
+                    <a class="flex items-center py-4 px-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none"
+                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                        <span class="font-semibold text-gray-500 text-lg">Book Shop</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="../index.html"
+                       class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Főoldal</a>
+                    <a href="../templates/konyvek.html"
+                       class="py-4 px-2 text-green-500 font-semibold border-b-4 border-green-500 hover:text-green-500 transition duration-300">Könyveink</a>
+                    <a href="../templates/rolunk.html"
+                       class="py-4 px-2 text-gray-500 font-semibold  hover:text-green-500 transition duration-300">Rólunk</a>
+                    <a href="../templates/elerhetosegunk.html"
+                       class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Elérhetőségünk</a>
+                    <div class="hidden relative mr-3 md:mr-0 md:block">
+                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                      clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <input type="text" id="email-adress-icon"
+                               class="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                               placeholder="Keresés...">
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-3 ">
+                <a href="bejelentkezes.html"
+                   class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Bejelentkezés</a>
+                <a href="regisztracio.html"
+                   class="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300">Regisztráció</a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button class="outline-none mobile-menu-button">
+                    <svg class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+                         x-show="!showMenu"
+                         fill="none"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         stroke-width="2"
+                         viewBox="0 0 24 24"
+                         stroke="currentColor"
+                    >
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="hidden mobile-menu">
+        <ul class="">
+            <li class="active"><a href="index.html"
+                                  class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Főoldal</a></li>
+            <li><a href="../templates/konyvek.html"
+                   class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Könyveink</a>
+            </li>
+            <li><a href="../templates/rolunk.html"
+                   class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Rólunk</a></li>
+            <li><a href="../templates/elerhetosegunk.html"
+                   class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Elérhetőségünk</a></li>
+        </ul>
+    </div>
+</nav>
+<div style="background-image: url(../img/kep01.jpg)" class="bg-cover w-full h-full">
+    <div class="backdrop-blur">
+        <h1 class="text-4xl font-bold text-center text-white pt-16 pb-6">Könyveink</h1>
+        <h2 class="text-2xl font-bold ml-48 text-white py-6">Műfajok: </h2>
+        <a href="#mufaj1" class="item">
+        <div class="flex flex-row items-baseline bg-gray-400 bg-opacity-50 ml-48 mr-48">
+            <h3 class="text-2xl ml-24 font-bold  text-white py-6">
+            Akció és Kaland
+        </h3>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 8" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        </a>
+        <div class="bg-gray-400 bg-opacity-50 lg:row-start-2 hidden lg:col-span-4 item-description ml-48 mr-48" id="mufaj1">
+           <div class="grid grid-cols-4 gap-x-14 items-center text-center">
+               <div class="flex flex-col gap-1">
+               <a href="#szoveg1" class="bg-green-500  mx-auto transition-transform text-center image">
+                       <img src="../img/ackeresztes.jpg" alt="Assassin's Creed - Titkos Keresztes Háború"
+                            class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+               </a>
+               <p class="py-3 text-white">Assassin's Creed - Titkos Keresztes Háború <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 4700 Ft</span> </p>
+               </div>
+               <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg1">
+                   <div class="flex flex-col lg:flex-row gap-6">
+                       <div class=" text-left">
+                           <h3 class="text-4xl mb-4 font-semibold text-center text-white">Assassin's Creed - Titkos Keresztes
+                               Háború </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Oliver Bowden</h4>
+                           <p class="px-10 text-white">Marco atyja, Niccolo Polo végre elmeséli a
+                               történetet, amelyet egész élete során titokban tartott - Altair, a
+                               Testvériség egyik legkiválóbb orgyilkosának élettörténetét. Altair kalandos
+                               újta során nemcsak a Szentföldet járja be keresztül-kasul, de az Orgyilkosok
+                               krédójának valódi értelme is megvilágosodik előtte. Hogy elkötelezettségét
+                               bizonyítsa, a rend kilenc halálos ellenségével kell végeznie, beleértve a
+                               templomosok nagymesterét, Robert de Sable-t is. Altair életének története
+                               most először olvasható a maga teljességében: a történelem menetét
+                               megváltoztató küldetése, véget nem érő küzdelme a templomosok összeesküvése
+                               ellen, családja tragikus és egyben megrendítő sorsa, és egy régi jó barát
+                               végzetes árulása. </p>
+                       </div>
+
+                   </div>
+                   <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                       <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 4700 Ft</p>
+                       <button type="button"
+                               class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                           Kosárba
+                       </button>
+                   </div>
+               </div>
+               <div class="flex flex-col gap-1">
+                   <a href="#szoveg2" class="bg-green-500  mx-auto transition-transform text-center image">
+                       <img src="../img/ajakfarkaszaszlo.jpg" alt="Leslie L. Lawrence – A jakfarkas zászló "
+                            class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                   </a>
+                   <p class="py-3 text-white">A jakfarkas zászló <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 4000 Ft</span> </p>
+               </div>
+               <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg2">
+                   <div class="flex flex-col lg:flex-row gap-6">
+                       <div class=" text-left">
+                           <h3 class="text-4xl mb-4 font-semibold text-center text-white">A jakfarkas zászló</h3>
+                           <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Leslie L. Lawrence</h4>
+                           <p class="px-10 text-white">LESLIE L. LAWRENCE-nek Nepálba kell utaznia, pedig
+                               nem szeretne; Karen-Marie halottat talál a szekrényében; Mary-Lounak nem
+                               sikerül fürdőkádba fojtania Philippa nénit; Namgyaldempa főláma jakvaj híján
+                               pocsék teát készít; Denis rinpócse holdas éjszakákon a kolostor tetején
+                               mászkál; Sullivan doktor egyre az orvosi táskáját keresi, pedig ott lapul a
+                               hóna alatt; Rogmo memszáhib kissé büdös ugyan, de azért befekszik hősünk
+                               ágyába; és még mindig nem derül ki, hogy hol is rejtőzik a titokzatos
+                               csingaszkangter. LESLIE L. LAWRENCE erőfeszítései nyomán aztán újabb
+                               halottak bukkannak elő; Namgyaldempa főláma cédulákat ragaszt a nagy
+                               imahengerekre; a közeli barlangban megtörténik a nagy leszámolás: fény derül
+                               a jakfarkas zászló titkára. </p>
+                       </div>
+
+                   </div>
+                   <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                       <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 4000 Ft</p>
+                       <button type="button"
+                               class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                           Kosárba
+                       </button>
+                   </div>
+               </div>
+               <div class="flex flex-col gap-1">
+                   <a href="#szoveg3" class="bg-green-500  mx-auto transition-transform text-center image">
+                       <img src="../img/azarabbordelyfoglyai.jpg" alt="Az arab bordély foglyai"
+                            class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                   </a>
+                   <p class="py-3 text-white">Az arab bordély foglyai <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 3790 Ft</span> </p>
+               </div>
+               <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg3">
+                   <div class="flex flex-col lg:flex-row gap-6">
+                       <div class=" text-left">
+                           <h3 class="text-4xl mb-4 font-semibold text-center text-white">Az arab bordély foglyai </h3>
+                           <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Laila Shukri </h4>
+                           <p class="px-10 text-white">Dubaj a csillogás, a mesés vagyonok városa.
+                               Gigantikus épületeit és romantikus parkjait szeretné megcsodálni a szürke
+                               hétköznapjait kéthetes dubaji nyaralással feledtető lengyel Julia, akit a
+                               szíve is a keleti aranyvárosba húz.
+                               <br class="hidden lg:block">
+                               A naiv, szerelmes lány abba a csapdába esik bele, amelybe oly sok sárga,
+                               fekete vagy fehér bőrű szépség a világ számos országából. Arab szerelme
+                               eladja jó pénzért: nyaralás helyett egy elitbordélyba hurcolják és
+                               prostitúcióra kényszerítik.
+                               <br class="hidden lg:block">
+                               A bordélyba a dubaji arisztokrácia jár, és Julia hamarosan megtapasztalja,
+                               hogy a leggazdagabbak számára a szexualitás csupán a féktelen hatalmi téboly
+                               megélésének eszköze.</p>
+                       </div>
+
+                   </div>
+                   <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                       <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 3790 Ft</p>
+                       <button type="button"
+                               class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                           Kosárba
+                       </button>
+                   </div>
+               </div>
+               <div class="flex flex-col gap-1">
+                   <a href="#szoveg4" class="bg-green-500  mx-auto transition-transform text-center image">
+                       <img src="../img/alanyalevelbol.jpg" alt="A lány levélből "
+                            class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                   </a>
+                   <p class="py-3 text-white">A lány levélből <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 3700 Ft</span> </p>
+               </div>
+               <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg4">
+                   <div class="flex flex-col lg:flex-row gap-6">
+                       <div class=" text-left">
+                           <h3 class="text-4xl mb-4 font-semibold text-center text-white">A lány levélből  </h3>
+                           <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Emily Gunnis </h4>
+                           <p class="px-10 text-white">
+                               Amikor Ivy Jenkins terhes lesz, családja a megesett lányok számára
+                               fenntartott rideg és kegyetlen St. Margaret anyaotthonba küldi, hogy
+                               elrejtse a világ szeme elől szégyenét. Kislányát akarata ellenére örökbe
+                               adják, és ezt Ivy soha nem fogja tudni kiheverni.
+                               <br class="hidden lg:block">
+                               Napjainkban. Samantha Harper újságíró úgy érzi, a végkimerülés határára
+                               került. Amikor azonban rábukkan egy levélre a múltból, annak tartalma
+                               mélységesen megérinti. Egy fiatal lányanya sorait olvassa, aki azért
+                               könyörög szerelmének, hogy mentse meg, mielőtt túl késő lenne.
+                               <br class="hidden lg:block">
+                               Sam kutatni kezd a tragikus történet után, és felfedezi, hogy számtalan
+                               megmagyarázhatatlan haláleset kapcsolódik a fiatal lányhoz és gyermekéhez.
+                               Miután a St. Margaret anyaotthon épületét lebontásra ítélik, Samnek néhány
+                               órája marad, hogy összeillessze a hatvan évvel azelőtti kirakós darabkáit,
+                               mielőtt az igazság végleg feledésbe merülne. Az igazság kifürkészhetetlen
+                               útjai ráadásul a saját családja felé vezetnek... </p>
+                       </div>
+
+                   </div>
+                   <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                       <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 3700 Ft</p>
+                       <button type="button"
+                               class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                           Kosárba
+                       </button>
+                   </div>
+               </div>
+           </div>
+
+        </div>
+
+<!--        2.műfaj   -->
+        <a href="#mufaj2" class="item">
+            <div class="flex flex-row items-baseline bg-gray-400 bg-opacity-50 ml-48 mr-48">
+                <h3 class="text-2xl ml-24 font-bold  text-white py-6">
+                    Romantikus
+                </h3>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 8" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </div>
+        </a>
+        <div class="bg-gray-400 bg-opacity-50 lg:row-start-2 hidden lg:col-span-4 item-description ml-48 mr-48" id="mufaj2">
+            <div class="grid grid-cols-4 gap-x-14 items-center text-center">
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg5" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/azarab.jfif" alt="Az Arab (Arab 1.) – Szenvedély és erotika a Kelet kapujában"
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Az Arab (Arab 1.) – Szenvedély és erotika a Kelet kapujában <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 3500 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg5">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Az Arab (Arab 1.) – Szenvedély és erotika a Kelet kapujában </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Borsa Brown </h4>
+                            <p class="px-10 text-white">Megbotránkoztató, ugyanakkor szívbe markoló történet
+                                egy nem mindennapi szerelemről egy szaúdi herceg és egy magyar nő között.
+                                Gamal ibh Hussein Ál-Szudairi a milliomosok megszokott életét éli, míg egy
+                                üzleti tárgyalás alkalmával Budapestre érkezik. Ridegsége és elhatárolódása
+                                az új világgal szemben hamarosan átalakul valami egészen mássá.
+                                Vannak érzések, melyek korlátokat döntenek le, és embereket formálnak át.
+                                Mindezt azért, hogy új útra léphessenek. Miként vállalhatja föl egymást két
+                                ember, akik oly különbözőek?
+                                Miként lépnek új útra, vagy veszik fel a harcot saját lelkükkel szemben? És
+                                mikor jönnek rá, hogy valami végleges és megváltoztathatatlan Borsa Brown, a
+                                több ezer példányban eladott Maffia triógia sikerszerzőjének legújabb és
+                                eddigi legizgalmasabb regénye sajátos, erotikával fűszerezett stílusával
+                                dolgozza fel a kényes témát.
+                                Csakúgy, mint eddigi könyveiben, elzárt világba kalauzol, érdekes
+                                karaktereket és élethelyzeteket, emberi kapcsolatokat mutat be, melyeket
+                                kellőképpen színez csattanós párbeszédekkel.
+                                <span class="text-xl"> <br class="hidden lg:block"> Az erotikus részekre tekintettel 18 év feletti olvasóknak ajánlott!</span>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 3500 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg6" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/amasodikeletedakkor.jfif" alt="A második életed akkor kezdődik amikor megérted, hogy csak egy van  "
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">A második életed akkor kezdődik amikor megérted, hogy csak egy van  <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 2500 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg6">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">A második életed akkor kezdődik amikor megérted, hogy csak egy van </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Raphaelle Giordano </h4>
+                            <p class="px-10 text-white">A harmincnyolc és negyed éves Camille-nak látszólag mindene megvan, hogy
+                                boldog legyen. Miért érzi mégis úgy, hogy elillant ez a boldogság? Arra
+                                vágyik, hogy visszataláljon az öröm és a kiteljesedés útjára. Amikor a
+                                rutinológus Claude felajánlja, hogy eredeti módszerével a segítségére lesz
+                                ebben, szinte habozás nélkül beleveti magát a kalandba, hogy meghódítsa az
+                                álmait... </p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 2500 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg7" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/mielottmegismertelek.jfif" alt="Mielőtt megismertelek"
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Mielőtt megismertelek <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 3800 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg7">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Mielőtt megismertelek </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Jojo Moyes  </h4>
+                            <p class="px-10 text-white">Louisa Clark elégedett az életével: szereti a csendes
+                                kisvárost, ahol születése óta, immár huszonhat éve él, a munkáját a városka
+                                egyik kávézójában. Szereti a családját, a mindig hangos, zsúfolt házat, ahol
+                                apjával, anyjával, az Alzheimer-kóros nagyapával, a család eszének tartott
+                                nővérével és annak ötéves kisfiával él. És talán még Patricket is, a
+                                barátját, akivel már hét éve vannak együtt. Egy napon azonban Lou szépen
+                                berendezett kis világában minden a feje tetejére áll: a kávézó váratlanul
+                                bezár, és Lou, hogy anyagilag továbbra is támogathassa a családját, egy
+                                harmincöt éves férfi gondozója lesz, aki -miután egy motorbalesetben
+                                teljesen lebénult- depressziósan és mogorván egy kerekes székben tölti
+                                napjait... Will Traynor gyűlöli az életét: hogy is ne gyűlölné, amikor
+                                egyetlen nap alatt mindent elveszített? A menő állása Londonban, az álomszép
+                                barátnője, a barátai, az egzotikus nyaralások - mindez már a múlté. A jelen
+                                pedig nem is lehetne rosszabb: nem elég, hogy önállóságától és méltóságától
+                                megfosztva vissza kellett térnie a szülővárosába, ebbe az álmos és unalmas
+                                városkába, a szülei birtokára, most még egy új gondozót is felvettek mellé,
+                                anélkül hogy kikérték volna a véleményét. Az új lány elviselhetetlenül
+                                cserfes, idegesítően optimista és borzalmasan felszínes... Lou-nál és
+                                Willnél különbözőbb két embert keresve se találhatnánk. Vajon képesek
+                                lesznek-e elviselni egymást, és -pusztán a másik kedvéért- újraértékelni
+                                mindazt, amit eddig gondoltak a világról??</p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 3800 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg8" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/norvegerdo.jfif" alt="Norvég erdő  "
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Norvég erdő  <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 4000 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg8">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Norvég erdő   </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Murakami Haruki  </h4>
+                            <p class="px-10 text-white">
+                                A Beatles Norvég erdő című legendás dala Toruban
+                                felidézi az első szerelem emlékét, azt az időszakot, amikor beleszeret
+                                elvesztett barátja szerelmébe, Naokóba. Egyszeriben visszacsöppen a húsz
+                                évvel korábbi Tokióban töltött diákéveibe, abba az életbe, amelyet viharos
+                                barátságok, szeszélyes fellángolások és szakítások, alkalmi szeretkezések,
+                                érzelmi zűrzavarok, veszteségek és beteljesületlen vágyakozások tettek
+                                emlékezetessé. Újraéli a találkozást a szókimondó, öntörvényű lánnyal,
+                                Midorival is, aki a felnőtté válás határán arra késztette, hogy válasszon
+                                múlt és jövő között. Könnyednek tűnő, rafinált történetében Murakami
+                                megidézi az 1960-as évek diáklázadásainak hangulatát, a szabad szerelem, a
+                                nagy ivászatok, az élvezetek kamaszos, provokatív hajszolásának popzenés
+                                világát. Ám a felszín alatt leheletfinom érzékenységgel ír életről,
+                                halálról, és a felnőtté válás mélypontjai és magaslatai közt hányódó
+                                fiatalság sebezhetőségéről. </p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 4000 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+<!--   3.műfaj     -->
+
+        <a href="#mufaj3" class="item">
+            <div class="flex flex-row items-baseline bg-gray-400 bg-opacity-50 ml-48 mr-48">
+                <h3 class="text-2xl ml-24 font-bold  text-white py-6">
+                    Rejtély és thriller
+                </h3>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 8" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </div>
+        </a>
+        <div class="bg-gray-400 bg-opacity-50 lg:row-start-2 hidden lg:col-span-4 item-description ml-48 mr-48" id="mufaj3">
+            <div class="grid grid-cols-4 gap-x-14 items-center text-center">
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg9" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/kedvencektemetoje.jpg" alt="Kedvencek temetője "
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Kedvencek temetője  <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 3800 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg9">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Kedvencek temetője  </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Stephen King  </h4>
+                            <p class="px-10 text-white">Dr. Louis Creed, a fiatal orvos kitűnő állást kapott:
+                                a Maine-i Egyetem rendelőjének lett a vezetője, ezért Chicagóból az idilli
+                                New England-i tájban álló, magányos házba költözik családjával -
+                                feleségével, Rachellel, ötéves lányukkal, Ellie-vel és másfél éves
+                                kisfiukkal, Gage-dzsel. Boldogan, a szép jövő reményében veszik birtokukba
+                                új otthonukat...
+                                Az első gondra az út túloldalán, velük átellenben élő öregember, Jud hívja
+                                föl a figyelmüket: a tájat kettészelő országúton éjjel-nappal olajszállító
+                                tartálykocsik dübörögnek, halálos veszélynek téve ki a háziállatokat és az
+                                apróságokat. Nem véletlenül van a közelben egy nyomasztó légkörű, ódon
+                                temető az elgázolt háziállatok számára... Az első trauma akkor éri Louist,
+                                amikor egy baleset áldozatául esett, haldokló fiú a rendelőben dadogó
+                                szavakkal óva inti az állattemetőn túli veszedelemtől. Nem sokra rá egy
+                                tartálykocsi elgázolja Ellie imádott macskáját, és az öreg Jud - jó- vagy
+                                rosszakaratból? - az állattemetőn túli, hátborzongató vidékre, a micmac
+                                indiánok egykori temetkezőhelyére viszi Louist, s ott földelteti el vele az
+                                állatot.
+                                Másnap a macska visszatér - de ocsmány jószág lett belőle: lomha, ijesztően
+                                bűzlő és gonosz. Aztán néhány békés hónap után a kis Gage elszabadul a
+                                szüleitől, és szaladni kezd pici lábain az országút felé...
+                                King borzalmakkal teli regénye magyarul 1993-ban jelent meg először,
+                                Állattemető címen.</p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 3800 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg10" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/az12.jpg" alt="Az 1-2 "
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Az 1-2  <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 7600 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg10">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Az 1-2  </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Stephen King  </h4>
+                            <p class="px-10 text-white">Heten voltak. Hét kiskamasz barát, akiknek szembe
+                                kellett szállniuk a városukat terrorizáló rémmel. A csatornákban, a
+                                lefolyókban, a kanálisban lakó Az időről időre felszínre bukkant, és akkor
+                                útját hullák szegélyezték. Sok hulla. De Derry városában ezen senki sem
+                                lepődött meg. Az emberek halandóak, a gyerekek meg főleg. Egészen addig,
+                                amíg ők heten össze nem fogtak, hogy legyőzzék Azt.
+                                De hogyan szállhat szembe hét gyerek az egész várost megfertőző gonosszal?
+                                Stephen King hatalmas regénye vérfagyasztó izgalmak során válaszolja meg a
+                                kérdést. És mesél még gyerekkorról és felnőttségről, pénzről és
+                                szegénységről, barátságról és kirekesztettségről, lányról és fiúról. Szóval
+                                az életről. </p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 7600 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg11" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/borzalmakvarosa.jpg" alt="Borzalmak városa "
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Borzalmak városa  <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 3800 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg11">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Borzalmak városa  </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Stephen King  </h4>
+                            <p class="px-10 text-white">Ben Mears, a sikeres író visszatér a Jerusalem's Lot
+                                nevű, isten háta mögötti kisvárosba, hogy "kiírja" magából itt szerzett
+                                gyermekkori traumáját: az 1930-as években a komoran a helység fölé magasodó
+                                Marsten-házba vonult vissza egy véres kezű gengszter, aki egy nap -
+                                látszólag minden indok nélkül - agyonlőtte feleségét, majd felkötötte magát.
+                                A gyermek Ben Mears egyszer beszökött ide, és meglátta a gengszter lógó
+                                hulláját, amely még évtizedek múltán sem indult oszlásnak... Az írónak
+                                azonban nem a nyugodt alkotómunka jut osztályrészül. Az álmos kisvárost
+                                mindinkább a megmagyarázhatatlan rettegés keríti hatalmába. Találnak egy
+                                akasztott kutyát, eltűnik két gyerek, s egyik este egy talpraesett kisfiú,
+                                Mark Pétrie a szobája ablakában megpillantja az egyik - időközben eltemetett
+                                - gyermek vigyorgó arcát. Mark már-már enged a kísértet bűverejének, de
+                                azután egy keresztet tart feléje, aminek láttán a jelenés agonizálni kezd,
+                                és füstté válik. Ben, Mark és még néhány, mindenre elszánt helybéli
+                                megindítja élet-halál harcát a Marsten-ház titokzatos lakói ellen.
+                                A Borzalmak városa Stephen King másodikként megjelent regénye, 1975-ből. Bár
+                                a művet a Carrie című regény után adták ki, de előbb született.</p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 3800 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg12" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/aragyogas.jpg" alt="A ragyogás   "
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">A ragyogás   <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 3790 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg12">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">A ragyogás   </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Stephen King </h4>
+                            <p class="px-10 text-white">
+                                "- Minden nagy szállodának vannak botrányai - mondta.
+                                - Ahogy kísértet is van minden nagy szállodában. Hogy miért? A fenébe is, az
+                                emberek jönnek-mennek. Megesik, hogy valamelyik a szobájában dobja fel a
+                                talpát, a szíve, vagy gutaütés, vagy valami ilyesmi. A szálloda babonás
+                                hely. Nincs tizenharmadik emelet, nincs tizenhármas szoba, nincs tükör az
+                                ajtón, amin az ember bemegy, meg hasonlók."
+                                <br class="hidden lg:block">
+                                Stephen King egyik leghíresebb története, A ragyogás, a Sziklás-hegység
+                                egyik magaslatán, egy világtól elzárt szállodában játszódik. Itt vállal
+                                állást az alkoholizmusából éppen kigyógyult Jack Torrance, és vele együtt
+                                ideköltözik felesége, Wendy, és kisfia, Danny is. Miközben Jack egyre
+                                megszállottabban próbálja megírni a szálloda történetét, természetfeletti,
+                                látnoki képességekkel rendelkező fia egyre több furcsa jelet lát...
+                                <br class="hidden lg:block">
+                                A ragyogás 1977-ben jelent meg először, és azonnal bestseller lett. Az azóta
+                                klasszikussá vált műből 1980-ban Stanley Kubrick rendezett filmet, Jack
+                                Nicholson főszereplésével.</p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 3790 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+<!--4.műfaj-->
+        <a href="#mufaj4" class="item">
+            <div class="flex flex-row items-baseline bg-gray-400 bg-opacity-50 ml-48 mr-48">
+                <h3 class="text-2xl ml-24 font-bold  text-white py-6">
+                    Gyermek
+                </h3>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 8" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </div>
+        </a>
+        <div class="bg-gray-400 bg-opacity-50 lg:row-start-2 hidden lg:col-span-4 item-description ml-48 mr-48" id="mufaj4">
+            <div class="grid grid-cols-4 gap-x-14 items-center text-center">
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg13" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/foxwoodmese.jpg" alt="Foxwood összes meséje "
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Foxwood összes meséje <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 7100 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg13">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Foxwood összes meséje </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Cynthia és Brian Paterson  </h4>
+                            <p class="px-10 text-white">Messze-messze, mesés tájakon innen és varázslatos
+                                völgyeken túl létezik egy csodálatos hely, ahol megállt az idő. Az állatok
+                                békében és szeretetben élnek, és a legkisebbek keresztül-kasul bebarangolják
+                                a környező vidéket. Ha arra visz az utad, nyisd ki jól a szemed és a füled,
+                                így biztos meghallod, ahogy Vili, Robi, Henrik és mind a többiek a
+                                közeledben játszanak. Téged is várnak, maguk közé fogadnak, s ha elfáradtál
+                                a közös játékban, csak ülj le szépen, és kérd meg őket, meséljenek egy
+                                csodálatos mesét neked. Cynthia Paterson elbűvölő történetei Brian Patterson
+                                bájos képein elevenednek meg. Foxwood meséi közel negyven éve bűvölnek el
+                                kicsiket és nagyokat egyaránt. Magyarul Szabó T. Anna fordításában most
+                                jelenik meg először mind a nyolc történet egy kötetben </p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 7100 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg14" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/farsangimese.jpg" alt="Farsangi mese "
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Farsangi mese <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 2000 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg14">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Farsangi mese </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Stephen King  </h4>
+                            <p class="px-10 text-white">Az ünnepi fények és melegség helyét januárban átveszi
+                                a szürkeség, a hideg és a vánszorgó percek. Az unalmasan telő napokkal Simon
+                                nagypapája lassan elveszíti a jókedvét, de családja és a szomszéd Lulu néni
+                                kieszelik, hogyan vidítsák fel. A régi emlékeket felidézve hagyományos
+                                farsangi felvonulást szerveznek, ahol a falu apraja-nagyja feleleveníti a
+                                régi szokásokat. Megtudhatjuk mit jelent a vízkereszt napja vagy a farsang
+                                farka, hogy kik azok az alakoskodók, és mivel foglalkozott régen a
+                                drótostót. Végül még az is kiderül, hogy valóban mágikus erővel bír-e a
+                                farsangi fánk.
+                                <br class="hidden lg:block">
+                                A hazai szokások, jeles napok, különleges hagyományok megismertetése a
+                                gyerekekkel igen fontos feladat - Takács Viktória gyönyörűen illusztrált
+                                története e vállalás jegyében született meg. A Hagyományaink sorozatban
+                                olyan ünnepeket dolgozott fel eddig, mint a betlehemezés, a mohácsi
+                                busójárás, a húsvét, a pünkösd, a lucázás, a szüret...</p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 2000 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg15" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/kalandozasasakktablan.jpg" alt="Kalandozás a sakk táblán "
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Kalandozás a sakk táblán <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 3800 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg15">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Kalandozás a sakk táblán </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Polgár Judit </h4>
+                            <p class="px-10 text-white">A sakkozás nemcsak játék, hanem gondolkodásmód is,
+                                amely már kisgyerekkorban elsajátítható, majd az élet számos területén
+                                sikerrel hasznosítható. Univerzális agytréning, amely logikus gondolkodásra
+                                tanít, fejleszti a problémamegoldó képességet, és szárnyakat ad a
+                                kreativitásnak. Polgár Judit könyvei mindezt mesével, rímekkel, játékos
+                                feladatokkal teszik, miközben a sakk szabályait is bemutatják.
+                                <br class="hidden lg:block">
+                                Egyszer volt, hol nem volt, volt egyszer egy Sakkpalota. Abban lakott a
+                                király és a királynő... Így kezdődik a mese, amelynek szereplőire megannyi
+                                kaland és megoldásra váró rejtély vár. A Kalandozás a sakktáblán című
+                                kötetben megismerjük a sakkbábukat és furcsa szokásaikat, megtanulunk a
+                                sakktáblán közlekedni, és rajzolunk, színezünk, verselünk.</p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 3800 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg16" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/anoverekatka.jpg" alt="A nővérek átka "
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">A nővérek átka <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 2800 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg16">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">A nővérek átka </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Lucys Strange  </h4>
+                            <p class="px-10 text-white">
+                                Küzdelmes az élet Willa, Grace, Freya és három húguk
+                                számára. A hat, anya nélkül maradt lány egy tanyán él és dolgozik rettegett
+                                apjuk és egy átok árnyékában. Mikor megérkezik a vidékre a titokzatos
+                                Telihold vásár, a legidősebb lány, Grace végre egy kis vidámságot
+                                csempészhet az életébe, ám másnap, mikor a mutatványosok tovább vándorolnak,
+                                neki is nyoma vész. Willa utánaered, az Elveszett mocsáron át követve
+                                nyomait, ahol sűrű árnyak gyülekeznek. Ha sikerül közöttük átvergődnie, és
+                                egyesíteni családját, talán az apja által rejtegetett titkokra is fény
+                                derül, és szembenézhet legmélyebb félelmeivel... Lucy Strange legendákat és
+                                mágiákat ötvöző kalandregénye . 10 éves kortól ajánljuk </p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 2800 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--5.műfaj-->
+        <a href="#mufaj5" class="item">
+            <div class="flex flex-row items-baseline bg-gray-400 bg-opacity-50 ml-48 mr-48">
+                <h3 class="text-2xl ml-24 font-bold  text-white py-6">
+                    Ifjúsági
+                </h3>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 8" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </div>
+        </a>
+        <div class="bg-gray-400 bg-opacity-50 lg:row-start-2 hidden lg:col-span-4 item-description ml-48 mr-48" id="mufaj5">
+            <div class="grid grid-cols-4 gap-x-14 items-center text-center">
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg17" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/mindengonoszokurnoje.jpg" alt="Minden gonoszok úrnője – A sötét tündér története "
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Minden gonoszok úrnője – A sötét tündér története <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 3300 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg17">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Minden gonoszok úrnője – A sötét tündér története </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Serena Valentino </h4>
+                            <p class="px-10 text-white">A jól ismert mesében mintha csak egy álom elevenedne
+                                meg: a kedves leány az erdőben összetalálkozik a jóképű herceggel. Ezt a
+                                történetet is sokan és sokféleképpen mesélték már. A leányról azonban mindig
+                                kiderül, hogy voltaképpen egy hercegnő, akit egy Sötét Tündér megátkozott,
+                                hogy egy rokkával megszúrja az ujját, s ettől örök álomra szenderüljön. S
+                                bár a három jó tündér igyekszik ezt megakadályozni, a hercegnőn beteljesedik
+                                az átok. Ám a jó végül diadalmaskodik: a leány szerelmese az igaz szerelem
+                                csókjával felébreszti a hercegnőt, majd boldogan élnek, amíg meg nem halnak.
+                                Csakhogy ez mindössze a történet egyik fele. Mi a helyzet a Sötét Tündérrel,
+                                Demónával? Miért átkozza meg az ártatlan hercegnőt? Sokan próbálták már
+                                megfejteni az okát. Ez a történet is egy az idők során újra és újra
+                                elmeséltek közül. Egy mese szerelemről és árulásról, mágiáról és reményről.
+                                Ez Minden gonoszok úrnőjének története.</p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 3300 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg18" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/percyjacksonolimposz.jpg" alt="Percy Jackson és az olimposziak 1. – A villámtolvaj"
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Percy Jackson és az olimposziak 1. – A villámtolvaj<br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 3000 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg18">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Percy Jackson és az olimposziak 1. – A villámtolvaj</h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Rick Riordan </h4>
+                            <p class="px-10 text-white">Rick Riordan, a szerző a legújabb amerikai Rowling.
+                                Eredeti, friss hang jellemzi - óriási a sikere! A regény alapja a
+                                legrégebben futó, legnépszerűbb, legelevenebb szappanopera, a görög
+                                mitológia. Mindez vagánysággal, egy "problémás" fiú küldetésével fűszerezve.
+                                A tizenkét éves Percy Jacksont eltanácsolják az iskolából. Megint.
+                                Bármennyire igyekszik, úgy tűnik, képtelen távol tartani magától a bajt. De
+                                tényleg szó nélkül végig kell néznie, ahogy egy kötekedő kölyök molesztálja
+                                a legjobb barátját? Tényleg nem szabad megvédenie magát az algebratanárnővel
+                                szemben, amikor az szörnyeteggé változik és meg akarja ölni? Természetesen
+                                senki nem hisz Percynek a szörny-incidenssel kapcsolatban; abban sem biztos,
+                                hogy magának hisz. Egészen addig, míg a Minotaurusz be nem kergeti a nyári
+                                táborba. Hirtelen mítikus lények járkálnak ki-be a lakokba és Percy görög
+                                mitológia könyve megelevenedik. Rájön, hogy az olimposzi istenek a
+                                huszonegyedik században is élnek. Sőt, ami ennél is rosszabb, némelyiküket
+                                felbosszantotta: Zeusz villámát ellopták, és Percy az első számú
+                                gyanúsított. Percynek mindössze tíz napja van arra, hogy megtalálja és
+                                visszaadja a Zeusztól ellopott holmit, és békét teremtsen a háborúságban
+                                álló Olimposzon. </p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 3000 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg19" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/shadowandbone.jpg" alt="Árnyék és csont"
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Árnyék és csont<br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 3600 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg19">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Árnyék és csont</h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Leigh Bardugo</h4>
+                            <p class="px-10 text-white">Alina Starkova sosem várt túl sokat az élettől. A
+                                határháborúk során elveszítette a szüleit. Árvaként csupán egyvalakire
+                                számíthatott. Egy másik kis földönfutóra, Malra, a legjobb barátjára. Ám
+                                mostanra már rá sem számíthatott. Mindkettőjüket besorozták hazájuk, Ravka
+                                anyácska hadseregébe. A két fiatalnak életveszélyes küldetésre kell indulnia
+                                az Árnyzónába. Ezen az iszonyatos helyen a földöntúli sötétség az úr, ahol
+                                valósággal hemzsegnek az emberevő szörnyetegek.
+                                Amikor támadás éri a katonai konvojukat, mindannyiuk élete veszélybe kerül.
+                                Ám Alina ekkor olyan titokzatos erőnek adja tanújelét, amiről mindaddig még
+                                ő sem tudott. A csodálatos megmenekülés kiszakítja a hétköznapok világából..
+                                . Meg sem áll a fővárosig, az uralkodó udvaráig, ahol az árva lány is a
+                                Grisa testvériség tagja lesz. Vezetőjük, a titokzatos Kom úr úgy véli, Alina
+                                az, akire oly régóta vár Ravka sokat szenvedett népe. A legfőbb varázsló
+                                szerint az Alinában rejtőző erő képes lesz elpusztítani az Árnyzónát.
+                                A cári udvar fényűző forgatagában sokan Kom úr új kegyeltjének tartják a
+                                lányt, aki csak nehezen tud beilleszkedni Mal nélkül. Miközben hazája egyre
+                                nagyobb veszélybe kerül, feltárul előtte egy hajmeresztő összeesküvés.
+                                Dönteni kell. Szembeszáll a birodalom leghatalmasabb nagyuraival? Egyedül a
+                                múltja mentheti meg hogy Alina megmenthesse a jövőt.</p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 3600 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg20" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/azorzok.jpg" alt="Az őrzők "
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Az őrzők<br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 4000 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg20">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Az őrzők</h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Berg Judit </h4>
+                            <p class="px-10 text-white">
+                                Renard felügyelő párizsi irodájában fontos hírt kap:
+                                régi ellenfele, Hiéna, Európa múzeumainak és magángyűjteményeinek hétpróbás
+                                fosztogatója a magyar fővárosban készül új akcióra. Ezzel egyidőben egy
+                                gimnazista lány újságíró édesanyja nyomtalanul eltűnik Budapesten. Bora arra
+                                gyanakszik, hogy az anyukáját elrabolták, mert olyan információ birtokába
+                                jutott, aminek nem lett volna szabad kiszivárognia. A francia felügyelő
+                                Budapestre érkezik, hogy tetten érje Hiénát, s ehhez a magyar rendőrség
+                                segítségét kéri. Bora elszántan nyomoz az édesanyja után, miközben egy
+                                történelemprojekt keretében osztályával együtt a budavári Mátyás-templom
+                                történetét kellene kutatnia.
+                                <br>
+                                Berg Judit József Attila-díjas írónak, a Hisztimesék szerzőjének, Rumini,
+                                Alma és Drifter megteremtőjének izgalmas krimijében a szereplők
+                                lépten-nyomon a történelem és a művészettörténet érdekfeszítő tényeibe,
+                                eseményeibe botlanak, miközben két nyomozó, néhány bűnöző és egy csapat
+                                elszánt magyar középiskolás élete tíz napra összefonódik, hogy a néhol
+                                vicces, máshol félelmetes, váratlan fordulatokban gazdag történet végén
+                                minden mozaikdarab a helyére kerüljön. </p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 4000 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--6.műfaj-->
+
+        <a href="#mufaj6" class="item">
+            <div class="flex flex-row items-baseline bg-gray-400 bg-opacity-50 ml-48 mr-48">
+                <h3 class="text-2xl ml-24 font-bold  text-white py-6">
+                    Fantázia
+                </h3>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 8" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </div>
+        </a>
+        <div class="bg-gray-400 bg-opacity-50 lg:row-start-2 hidden lg:col-span-4 item-description ml-48 mr-48" id="mufaj6">
+            <div class="grid grid-cols-4 gap-x-14 items-center text-center">
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg21" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/vajak.jpg" alt="Vaják – Az utolsó kívánság "
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Vaják – Az utolsó kívánság <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 3790 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg21">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Vaják – Az utolsó kívánság </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Andrzej Sapkowski  </h4>
+                            <p class="px-10 text-white">Geralt a vajákok közé tartozik: mágikus képességeinek
+                                köszönhetően, amelyeket hosszan tartó kiképzése és egy rejtélyes elixír csak
+                                még tovább csiszolt, zseniális és könyörtelen harcos hírében áll. Ugyanakkor
+                                nem hétköznapi gyilkos: célpontjai vérszomjas szörnyetegek és aljas
+                                fenevadak, amelyek mindenütt hatalmas pusztítást végeznek, és megtámadják az
+                                ártatlanokat.
+                                Hiába tűnik azonban valami gonosznak vagy jónak, nem biztos, hogy valóban az
+                                – és minden mesében van egy csipetnyi igazság.</p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 3790 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg22" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/gyurukura.jpg" alt="A gyűrűk Ura I-II-III."
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">A gyűrűk Ura I-II-III.<br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 12 300 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg22">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">A gyűrűk Ura I-II-III.</h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: J.R.R. Tolkien</h4>
+                            <p class="px-10 text-white">A Gyűrűk Ura tündérmese. Mégpedig -- legalábbis
+                                terjedelmét tekintve -- alighanem minden idők legnagyobb tündérmeséje.
+                                Tolkien képzelete szabadon, ráérősen kalandozik a könyv három vaskos
+                                kötetében -- vagyis abban a képzelt időben, mikor a világ sorát még nem az
+                                ember szabta meg, hanem a jót és szépet, a gonoszat és álnokot egyaránt
+                                ember előtti lények, ősi erők képviselték. Abban az időben, mikor a mi
+                                időszámításunk előtt ki tudja, hány ezer, tízezer esztendővel a Jó
+                                kisebbségbe szorult erői szövetségre léptek, hogy a Rossz erőit legyőzzék:
+                                tündérek, féltündék, az ősi Nyugat-földe erényeit őrző emberek, törpök és
+                                félszerzetek, erdő öregjei fogtak össze, hogy a jó varázslat eszközével, s a
+                                nagy mágus, Gandalf vezetésével végül győzelmet arassanak, de épp e győzelem
+                                következtében elenyésszen az ő idejük, s az árnyak birodalmába áthajózva
+                                átadják a földet új urának, az emberfajnak.
+
+                                Különös világ ez az emberfölötti -- vagy emberalatti -- lényekkel
+                                benépesített Középfölde. Anyagi valósága nincs. Baljós, fekete várai, csodás
+                                fehér tornyai, fullasztó, sűrű erdei, gyilkos hegyei, sötét mélységei
+                                gondoskodnak róla, hogy egy pillanatig ne érezzük magunkat a fogható valóság
+                                közegében. Különös, hisz ebben a mesevilágban, ahol oly ékesen virágoznak a
+                                lovagi erények, véletlenül sem találkozunk az emelkedett eszményeket hirdető
+                                kora középkori lovagvilág fonákjával, az eszmények máza alatt a könyörtelen
+                                társadalmi tagozódással, elnyomással, nyomorral, létbizonytalansággal; ebben
+                                a külsőre feudálisnak tetsző világban jó is, rossz is vele születik a
+                                szereplőkkel, ott rejlik a szívük mélyén; a könyv személytelen szereplője a
+                                morál, az pedig kiben-kiben belső parancs.
+
+                                <br> Göncz Árpád </p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 12 300 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg23" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/csipkerozsikak.jfif" alt="Csipkerózsikák"
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Csipkerózsikák<br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 5200 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg23">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Csipkerózsikák</h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Stephen King és Owen King </h4>
+                            <p class="px-10 text-white">Stephen King és Owen King szuperprodukciójában, apa
+                                és fia közösen írt könyvében a fő kérdés: mi történhet, ha a nők eltűnnek a
+                                férfiak világából?
+                                <br class="hidden lg:block"> Valamikor a jövőben (amely olyan valóságos,
+                                hogy akár napjainkra is felcserélhető lehetne) a nőket elalvás közben
+                                beburkolja egy ismeretlen fehérjéből képződő hártya, olyan, mint a
+                                selyemgubó. Ha a Csipkerózsikákként alvó nőket felébesztik, vagy bármi módon
+                                megsérül a gubójuk, akkor állatiasan vadak és erőszakosak lesznek. Alvás
+                                közben viszont egy másik, a miénknél jobb világba jutnak, ahol harmónia
+                                uralkodik, és szinte nincsenek konfliktusok.
+                                Egy isten háta mögötti helyen, a nyugat-virginiai Dooling női börtönében
+                                azonban van egyvalaki, egy titokzatos idegen, bizonyos Eve Black, aki
+                                normális módon elalszik és felébred. De vajon az ő esetében orvosi
+                                anomáliáról van szó, amit tanulmányozni kellene, hátha megoldást ad erre az
+                                egész alvásproblémára? Vagy talán Eve Black démon, a megmagyarázhatatlan
+                                jelenség okozója, és a legjobb lenne megsemmisíteni? A magukra maradt, egyre
+                                inkább ősi ösztöneikre hallgató férfiak egymással vetélkedő frakciókra
+                                szakadnak: ki megölni, ki megmenteni akarja Eve-t. Mások a zűrzavart
+                                kihasználva személyes ellenségeiken állnának bosszút. A csupa férfi világban
+                                elszabadul a pokol és tombol az erőszak...
+                                <br class="hidden lg:block">
+                                "Inkább fantasy ez, nem horror. Bizonyos részei gyilkosak, embereket
+                                széttépnek, lelőnek és szörnyű módokon meggyilkolnak, de nincs benne
+                                kísértet, sem ijesztő bohóc." (Owen King)</p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 5200 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg24" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/tronokharca.jfif" alt="Trónok harca – A tűz és jég dala"
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Trónok harca – A tűz és jég dala<br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 5000 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg24">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Trónok harca – A tűz és jég dala</h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: George R.R. Martin</h4>
+                            <p class="px-10 text-white">
+                                A Trónok harca lebilincselő fantasy, amely klasszikus
+                                lovagkirályságot tár az olvasó elé: Westeros fölött valaha a sárkánykirályok
+                                uralkodtak, ám a Targaryen-dinasztiát 15 évvel ezelőtt elűzték, és most
+                                Robert Baratheon uralkodik hű barátai, Jon Arryn, majd Eddard Stark
+                                segítségével. A konfliktus középpontjában Deres urai, a Starkok állnak.
+                                Olyanok, mint a föld, ahol születtek: makacs, kemény jellemű család. Szemünk
+                                előtt hősök, gazemberek és egy gonosz hatalom története elevenedik meg.
+                                Ám hamar rá kell ébrednünk, hogy ebben a világban mégsem egyszerűen jók és
+                                gonoszok kerülnek szembe egymással, hanem mesterien ábrázolt jellemek
+                                bontakoznak ki előttünk különböző vágyakkal, célokkal, félelmekkel és
+                                sebekkel.
+                                Martin legnagyobb erőssége hogy meg tudja újítani, élettel tölti fel azt a
+                                műfajt, amit a sok populáris Tolkien-imitáció évtizedeken át klisék
+                                sorozatába fojtva ismételgetett. A jég és tűz dalának első kötete egy
+                                világteremtő fantasy eposz nagyszabású felütése. </p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 5000 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--7.műfaj-->
+
+        <a href="#mufaj7" class="item">
+            <div class="flex flex-row items-baseline bg-gray-400 bg-opacity-50 ml-48 mr-48">
+                <h3 class="text-2xl ml-24 font-bold  text-white py-6">
+                    Filozófia
+                </h3>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 8" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </div>
+        </a>
+        <div class="bg-gray-400 bg-opacity-50 lg:row-start-2 hidden lg:col-span-4 item-description ml-48 mr-48" id="mufaj7">
+            <div class="grid grid-cols-4 gap-x-14 items-center text-center">
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg25" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/semmi.jpg" alt="Semmi"
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Semmi<br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 2800 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg25">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Semmi </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Janne Teller   </h4>
+                            <p class="px-10 text-white">Semminek sincs értelme, ezt régóta tudom. Ezért
+                                semmit sem érdemes csinálni. Erre most jöttem rá. Ezekkel a szavakkal hagyja
+                                el Pierre egy nap az osztálytermet. Osztálytársai erre elhatározzák, hogy
+                                nihilista társuknak bebizonyítják az ellenkezőjét. A terv szerint egy régi
+                                pajtában gyűjtenek össze mindent, aminek van értelme. De először csak egy
+                                fejetlen játékbaba, egy zsoltároskönyv, régi fényképek, elszáradt
+                                rózsaszirmok gyűlnek össze. Ezért a diákok azt találják ki, hogy mindenkinek
+                                valami számára különlegesen fontosat kell odaadnia. Olénak a
+                                bokszkesztyűjét, Hansnak a vadonatúj biciklijét, Hussainnek az imaszőnyegét.
+                                Minél nagyobb az áldozat, annál nagyobb az értelme. Ami ártalmatlan játéknak
+                                indul, hamarosan kontrollálhatatlanná válik: Rikke-Ursulának a copfjaitól,
+                                Gerdának a hörcsögétől kell megválnia. Kettejük még kegyetlenebb
+                                követelésekkel áll elő: Anna-Linek örökbefogadási bizonyítványa, a kis Emil
+                                koporsója, egy kutyatetem és egy Jézus-szobor is az értelem hegyén, a Fontos
+                                Dolgok Halmán végzi. Akkor vadulnak csak igazán el az események, amikor
+                                Sofie-nak az ártatlanságát, a tehetségesen gitározó Jan-Johannak meg az
+                                ujját kell feláldoznia. Ekkor lépnek közbe a szülők és a rendőrség. Csak
+                                Pierre marad flegma. Kineveti a kamaszokat, akik ilyen áldozatokra képesek,
+                                csak hogy megtalálják az élet értelmét. Ezért nagy árat kell fizetnie: a
+                                többi gyerek kegyetlenül bosszút áll.</p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 2800 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg26" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/doriangrayarckepe.jpg" alt="Dorian Gray arcképe "
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Dorian Gray arcképe <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 1700 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg26">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Dorian Gray arcképe </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Oscar Wilde </h4>
+                            <p class="px-10 text-white">Oscar Wilde klasszikus regényének hőse, a gazdag,
+                                gyönyörű és naiv fiatalember, Dorian Gray megszállottja annak a gondolatnak,
+                                hogy örökké szép és fiatal maradjon, s ezért még akár a lelkét is eladná.
+                                Miután az egyik barátja megfesti portréját, a fiú csak azt fájlalja, hogy az
+                                ő szépségét az élet és az idő hamar lerombolja majd, míg a képé örök marad,
+                                s azt kívánja, hogy bárcsak ez fordítva lenne. A fiatalember hamarosan
+                                cinikus barátja, Lord Henry Wotton befolyása alá kerül, aki ráébreszti az
+                                élet ízeire. Dorian átadja magát az önző és rafinált élvezeteknek, férfiakat
+                                és nőket taszít a bűn útjára, majd egyre mélyebbre süllyed, s a züllés
+                                minden nemét és formáját megtapasztalja. Az események egyre riasztóbb
+                                fordulatot vesznek, mivel nemsokára megtudja, hogy kívánsága teljesült.
+                                Legnagyobb csodálkozására ugyanis csak a róla készült kép öregszik. Arca és
+                                szeme őrzi az ártatlan ifjú szépségét, a festett arcmás viszont, amelyet
+                                gondosan elzárva tart háza egy titkos helyiségében, híven mutatja az idő és
+                                a bűn rombolását vonásain. Ekkor úgy érzi, itt az ideje megváltoztatnia az
+                                életét. Hogy teljesen tisztára mossa magát, bűnös múltjának tanúját, a
+                                szörnyűséges képet meg akarja semmisíteni...</p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 1700 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg27" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/afilozofianyomorusaga.jpg" alt="A filozófia nyomorúsága "
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">A filozófia nyomorúsága <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 1200 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg27">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">A filozófia nyomorúsága </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Karl Marx </h4>
+                            <p class="px-10 text-white">Az Anti-Proudhonnal kapcsolatban mondja Mehring, Marx
+                                életrajzában: A mű ,,határkövet jelent úgy szerzője életében, mint a
+                                tudomány történelmében. Ebben a munkában fejtette ki Marx első ízben
+                                tudományosan a történelmi materializmus döntő szempontjait. Ha régebbi
+                                írásaiban fel-felvillannak s később epigrammatikus rövidséggel össze is
+                                foglalta ezeket, de a Proudhon elleni művében egy diadalmas vita teljes
+                                világosságában tárul elénk." A kötetet Braun Soma fordításában adjuk
+                                közre.</p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 1200 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a href="#szoveg28" class="bg-green-500  mx-auto transition-transform text-center image">
+                        <img src="../img/okkultfilozofia.jpg" alt="Okkult filozófia "
+                             class="h-72  hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100">
+                    </a>
+                    <p class="py-3 text-white">Okkult filozófia <br class="hidden lg:block" ><span class="font-extrabold"><br class="hidden lg:block"> 2300 Ft</span> </p>
+                </div>
+                <div class="lg:row-start-2 hidden lg:col-span-4 image-description" id="szoveg28">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class=" text-left">
+                            <h3 class="text-4xl mb-4 font-semibold text-center text-white">Okkult filozófia </h3>
+                            <h4 class="px-10 text-2xl text-center mb-16 italic text-white">Szerző: Aggrippa von Nettesheim </h4>
+                            <p class="px-10 text-white">
+                                Agrippa von Nettesheim a középkor híres alkimistája,
+                                mágusa, orvosa. A De Occulta Philosophia, élete fő műve, ami a
+                                hermetikus-mágikus hagyomány teljes ismeretét bemutatja. Az első kötet a
+                                Magia Naturalis, azaz a Természetes Mágia világát tárja fel:
+                                <br class="hidden lg:block"> <br class="hidden lg:block">
+                                * a mágia mibenlétét,
+                                <br class="hidden lg:block"><br class="hidden lg:block">
+                                * az elemek tanát,
+                                <br class="hidden lg:block"><br class="hidden lg:block">
+                                * az analógiatörvényt,
+                                <br class="hidden lg:block"><br class="hidden lg:block">
+                                * a planéták karakterét, stb.
+                                <br class="hidden lg:block"><br class="hidden lg:block">
+                                A mű egyben ezotéria és kultúrtörténet, bemutatva a középkor emberének
+                                mágikus hiedelemvilágát és mély természetismeretét. </p>
+                        </div>
+
+                    </div>
+                    <div class="mt-10 pb-6 lg:mr-32 flex flex-row flex-wrap justify-evenly ">
+                        <p class="px-10 font-extrabold text-2xl text-left text-white">Teljes ár: 2300 Ft</p>
+                        <button type="button"
+                                class="text-white  bg-green-500 hover:scale-110 hover:bg-green-600 focus:ring-4 focus:ring-white font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            Kosárba
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--8.műfaj-->
+
+
+
+
+
+
+        <!--  a html végére értél kalandor gratulálok :)      -->
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        $(".item").on("click", function (e) {
+            e.preventDefault()
+            let href = $(this).attr("href");
+            $(".item-description:not(" + href + ")").hide()
+            $(href).toggle(400);
+            $(href + " form").hide();
+        });
+    });
+    $(document).ready(function () {
+        $(".image").on("click", function (e) {
+            e.preventDefault()
+            let href = $(this).attr("href");
+            $(".image-description:not(" + href + ")").hide()
+            $(href).toggle(400);
+            $(href + " form").hide();
+        });
+    });
+
+</script>
+</body>
+</html>
