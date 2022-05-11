@@ -17,6 +17,7 @@ public class BookDTO {
     @NotNull
     private String title;
     private String author;
+    private String genre;
     private Date releaseDate;
     private int price;
     @NotNull
