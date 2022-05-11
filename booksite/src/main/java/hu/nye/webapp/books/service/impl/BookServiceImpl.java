@@ -44,6 +44,14 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    public List<BookDTO> findByGenre(String genre) {
+        List<Book> optionalBook = bookRepository.findByGenre(genre);
+        return optionalBook.stream()
+                .map(book -> modelMapper.map(book, BookDTO.class))
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public BookDTO update(BookDTO bookDTO) {
         Long id = bookDTO.getId();
         Optional<Book> optionalBook = bookRepository.findById(id);

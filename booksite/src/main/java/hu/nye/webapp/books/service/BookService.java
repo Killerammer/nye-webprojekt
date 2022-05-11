@@ -12,6 +12,8 @@ public interface BookService {
 
     Optional<BookDTO> findById(Long id);
 
+    List<BookDTO> findByGenre(String genre);
+
     BookDTO update(BookDTO bookDTO);
 
     void delete(Long id);
