@@ -1,10 +1,7 @@
 package hu.nye.webapp.books.entity;
 
 import java.util.Date;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +17,7 @@ public class Book {
     private Long id;
     private String title;
     private String author;
+    private String genre;
     private Date releaseDate;
     private int price;
     private int pageNumber;
