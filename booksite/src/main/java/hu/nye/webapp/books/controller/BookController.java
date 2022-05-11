@@ -56,6 +56,12 @@ public class BookController {
         return response;
     }
 
+    @GetMapping("/genre/{genre}")
+    public ResponseEntity<List<BookDTO>> findByGenre(@PathVariable(name = "genre") String genre) {
+        List<BookDTO> optionalBookDTO = bookService.findByGenre(genre);
+        return ResponseEntity.ok(optionalBookDTO);
+    }
+
     @RequestMapping(method = RequestMethod.PUT)
     public ResponseEntity<BookDTO> update(@RequestBody @Valid BookDTO bookDTO, BindingResult bindingResult) {
         checkErrors(bindingResult);
