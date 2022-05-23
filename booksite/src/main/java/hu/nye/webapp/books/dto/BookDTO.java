@@ -25,4 +25,6 @@ public class BookDTO {
     private String publisher;
     @NotNull
     private String ISBN;
+    @NotNull
+    private String image;
 }

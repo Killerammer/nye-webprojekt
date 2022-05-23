@@ -23,4 +23,5 @@ public class Book {
     private int pageNumber;
     private String publisher;
     private String ISBN;
+    private String image;
 }
