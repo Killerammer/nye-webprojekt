@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Máj 23. 18:25
--- Kiszolgáló verziója: 10.4.21-MariaDB
--- PHP verzió: 8.0.11
+-- Host: 127.0.0.1
+-- Generation Time: May 23, 2022 at 07:12 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,11 +18,30 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Adatbázis: `booksite`
+-- Database: `booksite`
 --
 
+-- --------------------------------------------------------
+
 --
--- A tábla adatainak kiíratása `book`
+-- Table structure for table `book`
+--
+
+CREATE TABLE `book` (
+  `id` bigint(20) NOT NULL,
+  `isbn` varchar(255) DEFAULT NULL,
+  `author` varchar(255) DEFAULT NULL,
+  `genre` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `page_number` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `publisher` varchar(255) DEFAULT NULL,
+  `release_date` datetime DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `book`
 --
 
 INSERT INTO `book` (`id`, `isbn`, `author`, `genre`, `image`, `page_number`, `price`, `publisher`, `release_date`, `title`) VALUES
@@ -57,7 +76,43 @@ INSERT INTO `book` (`id`, `isbn`, `author`, `genre`, `image`, `page_number`, `pr
 (29, '9789634158493', 'Szabó Magda', 'Lányregény', 'https://s03.static.libri.hu/cover/fb/7/3260410_5.jpg', 349, 2650, 'MÓRA FERENC IFJÚSÁGI KÖNYVKIADÓ ZRT', '2022-01-01 01:00:00', 'Abigél'),
 (30, '0359000822052', 'Lisi Harrison', 'Lányregény', 'https://s04.static.libri.hu/cover/sl/e3/4/e3443cedb694532451c76c17c04665c4_big.jpg', 302, 790, 'Ulpius-ház', '2008-01-01 01:00:00', 'Klikk'),
 (31, '9789639563001', 'Jacqueline Wilson', 'Lányregény', 'https://s01.static.libri.hu/cover/37/c/676905_4.jpg', 112, 1400, 'Animus Kiadó', '2003-01-01 01:00:00', 'Aludj nálunk!'),
-(32, '0939000025785', 'William Somerset Maugham', 'Lányregény', 'https://s04.static.libri.hu/cover/sl/97/5/9755596491bcd2430495c1fec5c3c368_big.jpg', 314, 490, 'Fabula Könyvkiadó Kft.', '1994-01-01 01:00:00', 'Szerelmek végórái');
+(32, '0939000025785', 'William Somerset Maugham', 'Lányregény', 'https://s04.static.libri.hu/cover/sl/97/5/9755596491bcd2430495c1fec5c3c368_big.jpg', 314, 490, 'Fabula Könyvkiadó Kft.', '1994-01-01 01:00:00', 'Szerelmek végórái'),
+(33, '9789635040094', 'Stephen King', 'Rejtély és thriller', 'https://s02.static.libri.hu/cover/8a/e/5133250_5.jpg', 592, 3800, 'Európa Kiadó', '2019-03-18 00:00:00', 'Kedvencek temetője'),
+(34, '9789635041060', 'Stephen King', 'Rejtély és thriller', 'https://s03.static.libri.hu/cover/9b/c/5583207_5.jpg', 1200, 7600, 'Európa Kiadó', '2019-08-29 00:00:00', 'Az 1-2'),
+(35, '9789634059455', 'Stephen King', 'Rejtély és thriller', 'https://s04.static.libri.hu/cover/54/3/5049885_5.jpg', 624, 3800, 'Európa Kiadó', '2018-11-16 00:00:00', 'Borzalmak városa'),
+(36, '9630768984', 'Stephen King', 'Rejtély és thriller', 'https://static1.lira.hu/upload/M_28/rek1/841/2992841.jpg', 440, 3790, 'Európa Kiadó', '2001-01-01 00:00:00', 'A ragyogás'),
+(37, '9789635841226', 'Cynthia és Brian Paterson', 'Gyermek', 'https://static1.lira.hu/upload/M_28/rek1/512/2880512.jpg', 256, 7100, 'Manó Könyvek', '2022-02-22 00:00:00', 'Foxwood összes meséje'),
+(38, '9789635095155', 'Takács Viktória', 'Gyermek', 'https://static1.lira.hu/upload/M_28/rek1/327/2879327.jpg', 24, 2000, 'Scolar Kiadó', '2022-02-01 00:00:00', 'Farsangi mese'),
+(39, '9789635990856', 'Polgár Judit', 'Gyermek', 'https://s06.static.libri.hu/cover/cb/1/4086261_5.jpg', 64, 3800, 'KOLIBRI GYEREKKÖNYVKIADÓ KFT', '2020-01-01 00:00:00', 'Kalandozás a sakk táblán'),
+(40, '9789635841189', 'Lucy Strange', 'Gyermek', 'https://static1.lira.hu/upload/M_28/rek1/22/2878022.jpg', 336, 2800, 'Manó Könyvek', '2022-02-15 00:00:00', 'A nővérek átka'),
+(41, '9789635840960', 'Serena Valentino', 'Ifjúsági', 'https://static1.lira.hu/upload/M_28/rek1/18/2878018.jpg', 264, 3300, 'Manó Könyvek', '2022-02-25 00:00:00', 'Minden gonoszok úrnője - A sötét tündér története'),
+(42, '9789633998465', 'Rick Riordan', 'Ifjúsági', 'https://static1.lira.hu/upload/M_28/rek1/838/1267838.jpg', 373, 3000, 'KÖNYVMOLYKÉPZŐ KIADÓ KFT', '2016-11-03 00:00:00', 'Percy Jackson és az olimposziak 1. – A villámtolvaj'),
+(43, '9789635616770', 'Leigh Bardugo', 'Ifjúsági', 'https://static1.lira.hu/upload/M_28/rek1/481/2576481.jpg', 376, 3600, 'KÖNYVMOLYKÉPZŐ KIADÓ KFT', '2021-05-14 00:00:00', 'Árnyék és csont'),
+(44, '9789638988881', 'Berg Judit', 'Ifjúsági', 'https://static1.lira.hu/upload/M_28/rek1/508/1690508.jpg', 272, 4000, 'ECOVIT KIADÓ KFT', '2019-05-31 00:00:00', 'Az őrzők'),
+(45, '9789635660346', 'Andrzej Sapkowski', 'Fantázia', 'https://static1.lira.hu/upload/M_28/rek1/718/2448718.jpg', 632, 3790, 'Gabo Könyvkiadó és Kereskedo Kft', '2021-01-08 00:00:00', 'Vaják - Az utolsó kívánság'),
+(46, '2399978772728', 'J.R.R. Tolkien', 'Fantázia', 'https://s04.static.libri.hu/cover/sl/51/c/51c13f36b84bbe786f62285562535172_big.jpg', 1607, 12300, 'Árkádia Könyvkiadó', '1990-01-01 00:00:00', 'A gyűrűk Ura I-II-III.'),
+(47, '9789634059615', 'Stephen King és Owen King', 'Fantázia', 'https://static1.lira.hu/upload/M_28/rek1/257/1600257.jpg', 706, 5200, 'EURÓPA KÖNYVKIADÓ KFT.', '2019-01-08 00:00:00', 'Csipkerózsikák'),
+(48, '9789634478409', 'George R.R. Martin', 'Fantázia', 'https://static1.lira.hu/upload/M_28/rek1/710/2371710.jpg', 816, 5000, 'Alexandra Kiadó', '2020-11-20 00:00:00', 'Trónok harca');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `book`
+--
+ALTER TABLE `book`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `book`
+--
+ALTER TABLE `book`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
