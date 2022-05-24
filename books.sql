@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 23, 2022 at 07:12 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.0.13
+-- Gép: 127.0.0.1
+-- Létrehozás ideje: 2022. Máj 24. 17:58
+-- Kiszolgáló verziója: 10.4.11-MariaDB
+-- PHP verzió: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,15 +19,15 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `booksite`
+-- Adatbázis: `booksite`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `book`
+-- Tábla szerkezet ehhez a táblához `book`
 --
-
+/*
 CREATE TABLE `book` (
   `id` bigint(20) NOT NULL,
   `isbn` varchar(255) DEFAULT NULL,
@@ -39,9 +40,9 @@ CREATE TABLE `book` (
   `release_date` datetime DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
+*/
 --
--- Dumping data for table `book`
+-- A tábla adatainak kiíratása `book`
 --
 
 INSERT INTO `book` (`id`, `isbn`, `author`, `genre`, `image`, `page_number`, `price`, `publisher`, `release_date`, `title`) VALUES
@@ -53,14 +54,14 @@ INSERT INTO `book` (`id`, `isbn`, `author`, `genre`, `image`, `page_number`, `pr
 (6, '9789636357986', 'Leslie L. Lawrence', 'Akció és kaland', 'https://s06.static.libri.hu/cover/6d/9/8020428_5.jpg', 512, 4000, 'I.P.C Könyvek Kft.', '2021-01-01 01:00:00', 'A jakfarkas zászló'),
 (7, '9789635443802', 'Laila Shukri', 'Akció és kaland', 'https://s06.static.libri.hu/cover/b9/2/7323779_5.jpg', 429, 3790, 'Kossuth Kiadó Zrt.', '2021-01-01 01:00:00', 'Az arab bordély foglyai'),
 (8, '9789634474760', 'Emily Gunnis', 'Akció és kaland', 'https://s06.static.libri.hu/cover/c4/d/5744060_5.jpg', 336, 3700, 'Alexandra Könyvesház Kft.', '2019-01-01 01:00:00', 'A lány levélből'),
-(9, '9789634795414', 'George Orwell', 'Szatíra', NULL, 119, 1450, 'HELIKON KIADÓ KFT.', '2021-01-01 01:00:00', 'Állatfarm'),
-(10, '9789634798101', 'Bödőcs Tibor', 'Szatíra', NULL, 208, 3300, 'HELIKON KIADÓ KFT.', '2022-01-01 01:00:00', 'Addig se iszik'),
-(11, '2399987972546', 'Timur Vermes', 'Szatíra', NULL, 341, 3790, 'Libri Könyvkiadó', '2013-01-01 01:00:00', 'Nézd, ki van itt'),
-(12, '9786155164705', 'Karinthy Frigyes', 'Szatíra', NULL, 352, 4740, 'SZÁZADVÉG KIADÓ', '2020-01-01 01:00:00', 'Gulliver történetei'),
-(13, '2399993030827', 'Franz Kafka', 'Szépirodalmi', NULL, 302, 1500, 'Európa Könyvkiadó', '1982-01-01 01:00:00', 'Az átváltozás'),
-(14, '9789636896973', 'Thomas Mann', 'Szépirodalmi', NULL, 252, 1000, 'GABO KÖNYVKIADÓ ÉS KERESK.KFT.', '2013-01-01 01:00:00', 'Halál Velencében - Mario és a varázsló - Talentum'),
-(15, '9789630794534', 'Ken Kesey', 'Szépirodalmi', NULL, 374, 780, 'EURÓPA KÖNYVKIADÓ KFT.', '2020-01-01 01:00:00', 'Száll a kakukk fészkére'),
-(16, '9786066468701', 'Madách Imre', 'Szépirodalmi', NULL, 247, 850, 'Kreatív Kiadó', '2022-01-01 01:00:00', 'Az ember tragédiája'),
+(9, '9789634795414', 'George Orwell', 'Szatíra', 'https://s03.static.libri.hu/cover/a5/a/6951642_5.jpg', 119, 1450, 'HELIKON KIADÓ KFT.', '2021-01-01 01:00:00', 'Állatfarm'),
+(10, '9789634798101', 'Bödőcs Tibor', 'Szatíra', 'https://s02.static.libri.hu/cover/78/5/4136182_5.jpg', 208, 3300, 'HELIKON KIADÓ KFT.', '2022-01-01 01:00:00', 'Addig se iszik'),
+(11, '2399987972546', 'Timur Vermes', 'Szatíra', 'https://s04.static.libri.hu/cover/sl/41/f/41f2e31bba008324b320b784d7fd945c_big.jpg', 341, 3790, 'Libri Könyvkiadó', '2013-01-01 01:00:00', 'Nézd, ki van itt'),
+(12, '9786155164705', 'Karinthy Frigyes', 'Szatíra', 'https://s01.static.libri.hu/cover/b0/c/6709707_5.jpg', 352, 4740, 'SZÁZADVÉG KIADÓ', '2020-01-01 01:00:00', 'Gulliver történetei'),
+(13, '2399993030827', 'Franz Kafka', 'Szépirodalmi', 'https://s04.static.libri.hu/cover/sl/48/8/48864a6a733912645453c909712d5bb3_big.jpg', 302, 1500, 'Európa Könyvkiadó', '1982-01-01 01:00:00', 'Az átváltozás'),
+(14, '9789636896973', 'Thomas Mann', 'Szépirodalmi', 'https://s03.static.libri.hu/cover/60/4/879380_5.jpg', 252, 1000, 'GABO KÖNYVKIADÓ ÉS KERESK.KFT.', '2013-01-01 01:00:00', 'Halál Velencében - Mario és a varázsló - Talentum'),
+(15, '9789630794534', 'Ken Kesey', 'Szépirodalmi', 'https://s04.static.libri.hu/cover/60/8/674878_5.jpg', 374, 780, 'EURÓPA KÖNYVKIADÓ KFT.', '2020-01-01 01:00:00', 'Száll a kakukk fészkére'),
+(16, '9786066468701', 'Madách Imre', 'Szépirodalmi', 'https://s01.static.libri.hu/cover/90/d/4648299_3.jpg', 247, 850, 'Kreatív Kiadó', '2022-01-01 01:00:00', 'Az ember tragédiája'),
 (17, '9789632442952', 'Janne Teller', 'Filozófia', 'https://s02.static.libri.hu/cover/90/9/830872_5.jpg', 181, 2800, 'SCOLAR KIADÓ KFT.', '2021-01-01 01:00:00', 'Semmi'),
 (18, '9789634798156', 'Oscar Wilde', 'Filozófia', 'https://s06.static.libri.hu/cover/f6/4/6640364_5.jpg', 299, 1700, 'HELIKON KIADÓ KFT.', '2021-01-01 01:00:00', 'Dorian Gray arcképe'),
 (19, '9632070771', 'Marx Karl', 'Filozófia', 'https://cdn.antikvarium.hu/foto/eredeti/5519051.jpg', 284, 1200, 'Magyar Helikon', '1978-01-01 01:00:00', 'A filozófia nyomorúsága'),
@@ -92,27 +93,39 @@ INSERT INTO `book` (`id`, `isbn`, `author`, `genre`, `image`, `page_number`, `pr
 (45, '9789635660346', 'Andrzej Sapkowski', 'Fantázia', 'https://static1.lira.hu/upload/M_28/rek1/718/2448718.jpg', 632, 3790, 'Gabo Könyvkiadó és Kereskedo Kft', '2021-01-08 00:00:00', 'Vaják - Az utolsó kívánság'),
 (46, '2399978772728', 'J.R.R. Tolkien', 'Fantázia', 'https://s04.static.libri.hu/cover/sl/51/c/51c13f36b84bbe786f62285562535172_big.jpg', 1607, 12300, 'Árkádia Könyvkiadó', '1990-01-01 00:00:00', 'A gyűrűk Ura I-II-III.'),
 (47, '9789634059615', 'Stephen King és Owen King', 'Fantázia', 'https://static1.lira.hu/upload/M_28/rek1/257/1600257.jpg', 706, 5200, 'EURÓPA KÖNYVKIADÓ KFT.', '2019-01-08 00:00:00', 'Csipkerózsikák'),
-(48, '9789634478409', 'George R.R. Martin', 'Fantázia', 'https://static1.lira.hu/upload/M_28/rek1/710/2371710.jpg', 816, 5000, 'Alexandra Kiadó', '2020-11-20 00:00:00', 'Trónok harca');
+(48, '9789634478409', 'George R.R. Martin', 'Fantázia', 'https://static1.lira.hu/upload/M_28/rek1/710/2371710.jpg', 816, 5000, 'Alexandra Kiadó', '2020-11-20 00:00:00', 'Trónok harca'),
+(49, '2399988685681', 'Johann Wolfgang Goethe', 'Tragédia', 'https://s04.static.libri.hu/cover/b8/6/3426031_5.jpg', 300, 4000, 'Lampel Rt.', '1901-01-01 01:00:00', 'Faust'),
+(50, '2399993865535', 'William Shakespeare', 'Tragédia', 'https://s04.static.libri.hu/cover/sl/4c/1/4c14a4dc3c57c97fb659d243ffaacdb4_big.jpg', 305, 990, 'Corvina Kiadó', '2000-01-01 01:00:00', 'Hamlet'),
+(51, '9789632452036', 'William Shakespeare', 'Tragédia', 'https://s04.static.libri.hu/cover/3d/0/743281_5.jpg', 221, 2500, 'Könymolyképző Kiadó Kft.', '2010-01-01 01:00:00', 'Rómeó és Júlia'),
+(52, '9786066468657', 'Szophoklész', 'Tragédia', 'https://s05.static.libri.hu/cover/ed/e/7235777_5.jpg', 148, 1000, 'Kreatív Kiadó', '2021-01-01 01:00:00', 'Antigoné - Oedipus király'),
+(53, '9789635040179', 'Dmitry Glukhovsky', 'Sci-fi', 'https://s03.static.libri.hu/cover/c0/f/5126397_5.jpg', 1159, 7600, 'Európa Könyvkiadó Kft.', '2021-01-01 01:00:00', 'Metró - A trilógia'),
+(54, '9789635510733', 'Roman Kulikov - Jezsi Tumanovszkij', 'Sci-fi', 'https://s06.static.libri.hu/cover/e7/2/8290738_5.jpg', 271, 4000, 'Metropolis Media Group', '2022-01-01 01:00:00', 'S.T.A.L.K.E.R. - A Minótaurosz Projekt'),
+(55, '9789635660803', 'Isaac Asimov', 'Sci-fi', 'https://s03.static.libri.hu/cover/43/e/7930872_5.jpg', 568, 3800, 'Gabo Könyvkiadó és Keresk. Kft.', '2021-01-01 01:00:00', 'Az Alapítvány pereme'),
+(56, '9789634069034', 'Frank Herbert', 'Sci-fi', 'https://s03.static.libri.hu/cover/b5/c/5828424_5.jpg', 594, 4750, 'Gabo Könyvkiadó és Keresk. Kft.', '2019-01-01 01:00:00', 'Dűne'),
+(57, '9789631438925', 'Szvoren Edina', 'Novella', 'https://s01.static.libri.hu/cover/85/a/5723147_5.jpg', 176, 3150, 'Magvető Kft.', '2021-01-01 01:00:00', 'Nincs, és ne is legyen'),
+(58, '9789631438338', 'Mihail Bulgakov', 'Novella', 'https://s01.static.libri.hu/cover/05/2/5539584_5.jpg', 212, 1900, 'Magvető Kft.', '2021-01-01 01:00:00', 'Egy fiatal orvos feljegyzései'),
+(59, '9789633031025', 'Olga Tokarczuk', 'Novella', 'https://s04.static.libri.hu/cover/b6/b/5462832_5.jpg', 182, 3300, 'Vince Kiadó Kft', '2021-01-01 01:00:00', 'Bizarr történetek'),
+(60, '9786158121842', 'Wass Albert', 'Novella', 'https://s03.static.libri.hu/cover/bb/9/5263547_5.jpg', 279, 4250, 'Erdélyi Szalon-IAT Kiadó', '2021-01-01 01:00:00', 'Erdély magyar föld - Kötetben meg nem jelent írások');
 
 --
--- Indexes for dumped tables
+-- Indexek a kiírt táblákhoz
 --
 
 --
--- Indexes for table `book`
+-- A tábla indexei `book`
 --
 ALTER TABLE `book`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- A kiírt táblák AUTO_INCREMENT értéke
 --
 
 --
--- AUTO_INCREMENT for table `book`
+-- AUTO_INCREMENT a táblához `book`
 --
 ALTER TABLE `book`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
