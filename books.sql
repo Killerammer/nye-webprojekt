@@ -1,50 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.0.1
--- https://www.phpmyadmin.net/
---
--- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Máj 24. 17:58
--- Kiszolgáló verziója: 10.4.11-MariaDB
--- PHP verzió: 7.4.3
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Adatbázis: `booksite`
---
-
--- --------------------------------------------------------
-
---
--- Tábla szerkezet ehhez a táblához `book`
---
-/*
-CREATE TABLE `book` (
-  `id` bigint(20) NOT NULL,
-  `isbn` varchar(255) DEFAULT NULL,
-  `author` varchar(255) DEFAULT NULL,
-  `genre` varchar(255) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
-  `page_number` int(11) NOT NULL,
-  `price` int(11) NOT NULL,
-  `publisher` varchar(255) DEFAULT NULL,
-  `release_date` datetime DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-*/
---
--- A tábla adatainak kiíratása `book`
---
-
 INSERT INTO `book` (`id`, `isbn`, `author`, `genre`, `image`, `page_number`, `price`, `publisher`, `release_date`, `title`) VALUES
 (1, '9786155252990', 'Borsa Brown', 'Romantikus', 'https://s02.static.libri.hu/cover/ac/1/2658948_5.jpg', 469, 3500, 'Álomgyár Kiadó', '2015-10-28 01:00:00', 'Az Arab (Arab 1.) - Szenvedély és erotika a Kelet kapujában'),
 (2, '9786155760877', 'Raphaelle Giordano', 'Romantikus', 'https://s06.static.libri.hu/cover/56/b/4463140_5.jpg', 221, 2500, 'Művelt Nép Könyvkiadó', '2018-01-01 01:00:00', 'A második életed akkor kezdődik amikor megérted, hogy csak egy van'),
@@ -72,7 +25,7 @@ INSERT INTO `book` (`id`, `isbn`, `author`, `genre`, `image`, `page_number`, `pr
 (24, '9786156013507', 'Heidi Perks', 'Horror', 'https://s01.static.libri.hu/cover/6d/c/5397487_5.jpg', 416, 2000, 'ÁLOMGYÁR KIADÓ', '2021-01-01 01:00:00', 'Mint a szemed fényére'),
 (25, '9789635660933', 'Dan Brown', 'Krimi', 'https://s04.static.libri.hu/cover/34/b/744306_5.jpg', 733, 4200, 'GABO KÖNYVKIADÓ ÉS KERESK.KFT.', '2009-01-01 01:00:00', 'Az elveszett jelkép'),
 (26, '9789634067702', 'Ken Follett', 'Krimi', 'https://s04.static.libri.hu/cover/df/a/822254_5.jpg', 968, 5670, 'GABO KÖNYVKIADÓ ÉS KERESK.KFT.', '2010-01-01 01:00:00', 'A Titánok bukása'),
-(27, '2399989193932', 'Stieg Larsson', 'Krimi', 'https://s04.static.libri.hu/cover/sl/33/a/33a0ca61e27f03cbfc95729889b6037e_big.jpg', 576, 1990, 'Animus Kiadó', '0000-00-00 00:00:00', 'A tetovált lány'),
+(27, '2399989193932', 'Stieg Larsson', 'Krimi', 'https://s04.static.libri.hu/cover/sl/33/a/33a0ca61e27f03cbfc95729889b6037e_big.jpg', 576, 1990, 'Animus Kiadó', '2005-01-01 01:00:00', 'A tetovált lány'),
 (28, '9789635661121', 'Dan Brown', 'Krimi', 'https://s04.static.libri.hu/cover/e0/5/4325023_5.jpg', 576, 4200, 'GABO KÖNYVKIADÓ ÉS KERESK.KFT.', '2018-01-01 01:00:00', 'Eredet'),
 (29, '9789634158493', 'Szabó Magda', 'Lányregény', 'https://s03.static.libri.hu/cover/fb/7/3260410_5.jpg', 349, 2650, 'MÓRA FERENC IFJÚSÁGI KÖNYVKIADÓ ZRT', '2022-01-01 01:00:00', 'Abigél'),
 (30, '0359000822052', 'Lisi Harrison', 'Lányregény', 'https://s04.static.libri.hu/cover/sl/e3/4/e3443cedb694532451c76c17c04665c4_big.jpg', 302, 790, 'Ulpius-ház', '2008-01-01 01:00:00', 'Klikk'),
@@ -81,7 +34,7 @@ INSERT INTO `book` (`id`, `isbn`, `author`, `genre`, `image`, `page_number`, `pr
 (33, '9789635040094', 'Stephen King', 'Rejtély és thriller', 'https://s02.static.libri.hu/cover/8a/e/5133250_5.jpg', 592, 3800, 'Európa Kiadó', '2019-03-18 00:00:00', 'Kedvencek temetője'),
 (34, '9789635041060', 'Stephen King', 'Rejtély és thriller', 'https://s03.static.libri.hu/cover/9b/c/5583207_5.jpg', 1200, 7600, 'Európa Kiadó', '2019-08-29 00:00:00', 'Az 1-2'),
 (35, '9789634059455', 'Stephen King', 'Rejtély és thriller', 'https://s04.static.libri.hu/cover/54/3/5049885_5.jpg', 624, 3800, 'Európa Kiadó', '2018-11-16 00:00:00', 'Borzalmak városa'),
-(36, '9630768984', 'Stephen King', 'Rejtély és thriller', 'https://static1.lira.hu/upload/M_28/rek1/841/2992841.jpg', 440, 3790, 'Európa Kiadó', '2001-01-01 00:00:00', 'A ragyogás'),
+(36, '2399985508600', 'Stephen King', 'Rejtély és thriller', 'https://s04.static.libri.hu/cover/sl/71/e/71ea1596e3ffd534c8c09a9358dd0f4e_big.jpg', 500, 1000, 'Európa Kiadó', '1991-01-01 00:00:00', 'A ragyogás'),
 (37, '9789635841226', 'Cynthia és Brian Paterson', 'Gyermek', 'https://static1.lira.hu/upload/M_28/rek1/512/2880512.jpg', 256, 7100, 'Manó Könyvek', '2022-02-22 00:00:00', 'Foxwood összes meséje'),
 (38, '9789635095155', 'Takács Viktória', 'Gyermek', 'https://static1.lira.hu/upload/M_28/rek1/327/2879327.jpg', 24, 2000, 'Scolar Kiadó', '2022-02-01 00:00:00', 'Farsangi mese'),
 (39, '9789635990856', 'Polgár Judit', 'Gyermek', 'https://s06.static.libri.hu/cover/cb/1/4086261_5.jpg', 64, 3800, 'KOLIBRI GYEREKKÖNYVKIADÓ KFT', '2020-01-01 00:00:00', 'Kalandozás a sakk táblán'),
@@ -96,7 +49,7 @@ INSERT INTO `book` (`id`, `isbn`, `author`, `genre`, `image`, `page_number`, `pr
 (48, '9789634478409', 'George R.R. Martin', 'Fantázia', 'https://static1.lira.hu/upload/M_28/rek1/710/2371710.jpg', 816, 5000, 'Alexandra Kiadó', '2020-11-20 00:00:00', 'Trónok harca'),
 (49, '2399988685681', 'Johann Wolfgang Goethe', 'Tragédia', 'https://s04.static.libri.hu/cover/b8/6/3426031_5.jpg', 300, 4000, 'Lampel Rt.', '1901-01-01 01:00:00', 'Faust'),
 (50, '2399993865535', 'William Shakespeare', 'Tragédia', 'https://s04.static.libri.hu/cover/sl/4c/1/4c14a4dc3c57c97fb659d243ffaacdb4_big.jpg', 305, 990, 'Corvina Kiadó', '2000-01-01 01:00:00', 'Hamlet'),
-(51, '9789632452036', 'William Shakespeare', 'Tragédia', 'https://s04.static.libri.hu/cover/3d/0/743281_5.jpg', 221, 2500, 'Könymolyképző Kiadó Kft.', '2010-01-01 01:00:00', 'Rómeó és Júlia'),
+(51, '9789632452036', 'William Shakespeare', 'Tragédia', 'https://s04.static.libri.hu/cover/3d/0/743281_5.jpg', 221, 2500, 'Könyvmolyképző Kiadó Kft.', '2010-01-01 01:00:00', 'Rómeó és Júlia'),
 (52, '9786066468657', 'Szophoklész', 'Tragédia', 'https://s05.static.libri.hu/cover/ed/e/7235777_5.jpg', 148, 1000, 'Kreatív Kiadó', '2021-01-01 01:00:00', 'Antigoné - Oedipus király'),
 (53, '9789635040179', 'Dmitry Glukhovsky', 'Sci-fi', 'https://s03.static.libri.hu/cover/c0/f/5126397_5.jpg', 1159, 7600, 'Európa Könyvkiadó Kft.', '2021-01-01 01:00:00', 'Metró - A trilógia'),
 (54, '9789635510733', 'Roman Kulikov - Jezsi Tumanovszkij', 'Sci-fi', 'https://s06.static.libri.hu/cover/e7/2/8290738_5.jpg', 271, 4000, 'Metropolis Media Group', '2022-01-01 01:00:00', 'S.T.A.L.K.E.R. - A Minótaurosz Projekt'),
@@ -106,28 +59,3 @@ INSERT INTO `book` (`id`, `isbn`, `author`, `genre`, `image`, `page_number`, `pr
 (58, '9789631438338', 'Mihail Bulgakov', 'Novella', 'https://s01.static.libri.hu/cover/05/2/5539584_5.jpg', 212, 1900, 'Magvető Kft.', '2021-01-01 01:00:00', 'Egy fiatal orvos feljegyzései'),
 (59, '9789633031025', 'Olga Tokarczuk', 'Novella', 'https://s04.static.libri.hu/cover/b6/b/5462832_5.jpg', 182, 3300, 'Vince Kiadó Kft', '2021-01-01 01:00:00', 'Bizarr történetek'),
 (60, '9786158121842', 'Wass Albert', 'Novella', 'https://s03.static.libri.hu/cover/bb/9/5263547_5.jpg', 279, 4250, 'Erdélyi Szalon-IAT Kiadó', '2021-01-01 01:00:00', 'Erdély magyar föld - Kötetben meg nem jelent írások');
-
---
--- Indexek a kiírt táblákhoz
---
-
---
--- A tábla indexei `book`
---
-ALTER TABLE `book`
-  ADD PRIMARY KEY (`id`);
-
---
--- A kiírt táblák AUTO_INCREMENT értéke
---
-
---
--- AUTO_INCREMENT a táblához `book`
---
-ALTER TABLE `book`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
