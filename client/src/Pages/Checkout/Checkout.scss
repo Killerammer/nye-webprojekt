@@ -54,6 +54,7 @@
   z-index: 1;
 
   &__card{
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -77,9 +78,10 @@
     }
 
     &--footer{
-      display: grid;
-      grid-template-columns: 70% 30%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-
   }
 }
