@@ -23,7 +23,7 @@ export const Home: React.FC<PageProps> = ({ state, dispatch, ctx }): JSX.Element
                 name={item.title} 
                 genre={item.genre}
                 price={item.price}
-              //  image={item.image}
+                image={item.image}
                 dispatch={dispatch as React.Dispatch<ActionType>}
                 added={item.added as boolean}
               />

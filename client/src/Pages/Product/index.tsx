@@ -11,7 +11,7 @@ export const Product: React.FC<PageProps> = ({ state, dispatch }): JSX.Element =
   return(
     <section className="Detail">
       <article className="Detail__thumbnail">
-        {/*<img src={item.image} alt="" />*/}
+        <img src={item.image} alt="" />
       </article>
 
       <article className="Detail__info">

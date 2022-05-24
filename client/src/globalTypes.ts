@@ -14,7 +14,7 @@ export interface ItemInterface{
   id: number;
   genre: string;
   author: string;
- // image: string;
+  image: string;
   price: number;
   title: string;
   quantity?: number;
