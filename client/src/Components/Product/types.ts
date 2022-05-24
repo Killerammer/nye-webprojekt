@@ -4,7 +4,7 @@ export interface ProductProps{
   title: string;
   price: number;
   quantity: number;
- // img: string;
+  img: string;
   dispatch: React.Dispatch<ActionType>;
   id: number,
 }

@@ -7,7 +7,7 @@ export const Item: React.FC<ItemProps> = ({
   name,
   genre,
   price,
-  //image,
+  image,
   dispatch,
   added
 }): JSX.Element => {
@@ -26,7 +26,7 @@ export const Item: React.FC<ItemProps> = ({
   return(
     <div className="Item">
       <div className="Item__thumbnail" onClick={handleNavigate}>
-        {/*<img src={image} alt={name} />*/}
+        <img src={image} alt={name} />
       </div>
 
       <div className="Item__body">

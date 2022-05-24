@@ -42,7 +42,7 @@ export const Cart: React.FC<PageProps> = ({ state, dispatch }): JSX.Element => {
                 title={product.title}
                 price={product.price}
                 quantity={product.quantity as number}
-               // img={product.image}
+                img={product.image}
                 dispatch={dispatch as React.Dispatch<ActionType>}
                 id={product.id}
               />

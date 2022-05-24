@@ -20,14 +20,14 @@ export const Filter: React.FC<FilterProps> = ({ dispatch, isInHeader }): JSX.Ele
         ))}
       </select>
 
-      {genres.map(genre => (
-        <ButtonCategory 
-          key={genre}
-          content={genre}
-          dispatch={dispatch}
-          to={isInHeader ? "/" : ""}
-        />
-      ))}
+      {/*{genres.map(genre => (*/}
+      {/*  <ButtonCategory */}
+      {/*    key={genre}*/}
+      {/*    content={genre}*/}
+      {/*    dispatch={dispatch}*/}
+      {/*    to={isInHeader ? "/" : ""}*/}
+      {/*  />*/}
+      {/*))}*/}
     </section>
   )
 }

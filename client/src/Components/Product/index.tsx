@@ -6,7 +6,7 @@ export const Product: React.FC<ProductProps> = ({
   title,
   price,
   quantity,
-  //img,
+  img,
   dispatch,
   id,
 }): JSX.Element => {
@@ -20,7 +20,7 @@ export const Product: React.FC<ProductProps> = ({
   return(
     <div className="Product">
       <div className="Product__thumbnail">
-        {/*<img src={img} alt={title} />*/}
+        <img src={img} alt={title} />
       </div>
 
       <div className="Product__content">

@@ -6,7 +6,7 @@ export interface ItemProps{
   name: string;
   genre: string;
   price: number;
-//  image: string;
+  image: string;
   dispatch: React.Dispatch<ActionType>
   added: boolean
 }
